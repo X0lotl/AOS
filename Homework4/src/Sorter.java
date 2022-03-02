@@ -1,7 +1,24 @@
 import java.util.Comparator;
 
 public class Sorter {
-    public static Comparable[] shellSortComparator(Comparable[] arrayOfStudents){
+    public static Object[] shellSortComparator(Comparator comparator, Object[] arrayOfStudentsObject){
+        for (int gap = arrayOfStudentsObject.length / 2; gap > 0; gap /= 2){
+            for(int i = gap; i < arrayOfStudentsObject.length; i++){
+                Object tempObject = arrayOfStudentsObject[i];
+                int j;
+
+                for(j = i; j >= gap && comparator.compare(arrayOfStudentsObject[j - gap], tempObject) > 0; j -= gap){
+                    arrayOfStudentsObject[j] = arrayOfStudentsObject[j - gap];
+                }
+
+                arrayOfStudentsObject[j] = tempObject;
+            }
+        }
+
+        return arrayOfStudentsObject;
+    }
+
+    public static Comparable[] shellSortComparable(Comparable[] arrayOfStudents){
         for (int gap = arrayOfStudents.length / 2; gap > 0; gap /= 2){
             for(int i = gap; i < arrayOfStudents.length; i++){
                 Comparable tempComparable = arrayOfStudents[i];
@@ -14,6 +31,7 @@ public class Sorter {
                 arrayOfStudents[j] = tempComparable;
             }
         }
+
         return arrayOfStudents;
     }
     public static Comparable[] combSortComparable(Comparable[] arrayOfStudents) {
