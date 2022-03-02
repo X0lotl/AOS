@@ -19,7 +19,7 @@ public class SorterTest {
         System.out.println('\n' + "Your array is sorted by average grade through bubble sorter: \n" + Arrays.toString(listOfStudents));
         Sorter.selectionSortComparable(listOfStudents); //average grade compairing with selection sorter
         System.out.println('\n' + "Your array is sorted by average through selection sorter: \n" + Arrays.toString(listOfStudents));
-        Sorter.insertionSortComparable(listOfStudents); //average grade compairing with shell sorter
+        Sorter.shellSortComparator(listOfStudents); //average grade compairing with shell sorter
         System.out.println('\n' + "Your array is sorted by average through selection sorter: \n" + Arrays.toString(listOfStudents));
 
         CompareStudentName compareStudentName = new CompareStudentName();
