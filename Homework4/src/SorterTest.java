@@ -31,6 +31,8 @@ public class SorterTest {
         System.out.println('\n' + "Your array is sorted by name through insertion sorter: \n" + Arrays.toString(listOfStudents));
         Sorter.combSortComparator(compareStudentName, listOfStudents);//comparing name through comb sort with comparator
         System.out.println('\n' + "Your array is sorted by name through insertion sorter: \n" + Arrays.toString(listOfStudents));
+        Sorter.shellSortComparator(compareStudentName, listOfStudents);//comparing name through shell sort with comparator
+        System.out.println('\n' + "Your array is sorter by name through insertion sorter: \n" + Arrays.toString(listOfStudents));
 
         CompareStudentsYearOfBirthFromTheOldest compareStudentsYearOfBirthFromTheOldest = new CompareStudentsYearOfBirthFromTheOldest();
         Sorter.bubbleSortComparator(compareStudentsYearOfBirthFromTheOldest, listOfStudents); //comparing year of birth through bubble sort with comparator
