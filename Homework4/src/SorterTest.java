@@ -20,7 +20,7 @@ public class SorterTest {
         Sorter.selectionSortComparable(listOfStudents); //average grade compairing with selection sorter
         System.out.println('\n' + "Your array is sorted by average through selection sorter: \n" + Arrays.toString(listOfStudents));
         Sorter.shellSortComparable(listOfStudents); //average grade compairing with shell sorter
-        System.out.println('\n' + "Your array is sorted by average through selection sorter: \n" + Arrays.toString(listOfStudents));
+        System.out.println('\n' + "Your array is sorted by average through shell sorter: \n" + Arrays.toString(listOfStudents));
 
         CompareStudentName compareStudentName = new CompareStudentName();
         Sorter.bubbleSortComparator(compareStudentName, listOfStudents); //comparing name through bubble sort with comparator
@@ -32,7 +32,7 @@ public class SorterTest {
         Sorter.combSortComparator(compareStudentName, listOfStudents);//comparing name through comb sort with comparator
         System.out.println('\n' + "Your array is sorted by name through insertion sorter: \n" + Arrays.toString(listOfStudents));
         Sorter.shellSortComparator(compareStudentName, listOfStudents);//comparing name through shell sort with comparator
-        System.out.println('\n' + "Your array is sorter by name through insertion sorter: \n" + Arrays.toString(listOfStudents));
+        System.out.println('\n' + "Your array is sorter by name through shell sorter: \n" + Arrays.toString(listOfStudents));
 
         CompareStudentsYearOfBirthFromTheOldest compareStudentsYearOfBirthFromTheOldest = new CompareStudentsYearOfBirthFromTheOldest();
         Sorter.bubbleSortComparator(compareStudentsYearOfBirthFromTheOldest, listOfStudents); //comparing year of birth through bubble sort with comparator
