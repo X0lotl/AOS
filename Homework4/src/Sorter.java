@@ -1,13 +1,13 @@
 import java.util.Comparator;
 
 public class Sorter {
-    public static Object[] shellSortComparator(Comparator comparator, Object[] arrayOfStudentsObject){
-        for (int gap = arrayOfStudentsObject.length / 2; gap > 0; gap /= 2){
-            for(int i = gap; i < arrayOfStudentsObject.length; i++){
+    public static Object[] shellSortComparator(Comparator comparator, Object[] arrayOfStudentsObject) {
+        for (int gap = arrayOfStudentsObject.length / 2; gap > 0; gap /= 2) {
+            for (int i = gap; i < arrayOfStudentsObject.length; i++) {
                 Object tempObject = arrayOfStudentsObject[i];
                 int j;
 
-                for(j = i; j >= gap && comparator.compare(arrayOfStudentsObject[j - gap], tempObject) > 0; j -= gap){
+                for (j = i; j >= gap && comparator.compare(arrayOfStudentsObject[j - gap], tempObject) > 0; j -= gap) {
                     arrayOfStudentsObject[j] = arrayOfStudentsObject[j - gap];
                 }
 
@@ -18,13 +18,13 @@ public class Sorter {
         return arrayOfStudentsObject;
     }
 
-    public static Comparable[] shellSortComparable(Comparable[] arrayOfStudents){
-        for (int gap = arrayOfStudents.length / 2; gap > 0; gap /= 2){
-            for(int i = gap; i < arrayOfStudents.length; i++){
+    public static Comparable[] shellSortComparable(Comparable[] arrayOfStudents) {
+        for (int gap = arrayOfStudents.length / 2; gap > 0; gap /= 2) {
+            for (int i = gap; i < arrayOfStudents.length; i++) {
                 Comparable tempComparable = arrayOfStudents[i];
                 int j;
 
-                for(j = i; j >= gap && arrayOfStudents[j - gap].compareTo(tempComparable) > 0; j -= gap){
+                for (j = i; j >= gap && arrayOfStudents[j - gap].compareTo(tempComparable) > 0; j -= gap) {
                     arrayOfStudents[j] = arrayOfStudents[j - gap];
                 }
 
@@ -34,6 +34,7 @@ public class Sorter {
 
         return arrayOfStudents;
     }
+
     public static Comparable[] combSortComparable(Comparable[] arrayOfStudents) {
         int gap = arrayOfStudents.length;
         boolean isSwapped = true;
@@ -60,14 +61,14 @@ public class Sorter {
     public static Object[] combSortComparator(Comparator comparator, Object[] arrayOfStudentsObject) {
         int gap = arrayOfStudentsObject.length;
         boolean isSwapped = true;
-        while (gap > 1 || isSwapped){
-            if(gap > 1){
+        while (gap > 1 || isSwapped) {
+            if (gap > 1) {
                 gap = (int) (gap / 1.3);
             }
             isSwapped = false;
 
-            for(int i = 0; i < arrayOfStudentsObject.length - gap; i++){
-                if(comparator.compare(arrayOfStudentsObject[i], arrayOfStudentsObject[i + gap]) > 0){
+            for (int i = 0; i < arrayOfStudentsObject.length - gap; i++) {
+                if (comparator.compare(arrayOfStudentsObject[i], arrayOfStudentsObject[i + gap]) > 0) {
                     Object tempObject = arrayOfStudentsObject[i];
                     arrayOfStudentsObject[i] = arrayOfStudentsObject[i + gap];
                     arrayOfStudentsObject[i + gap] = tempObject;
@@ -76,7 +77,7 @@ public class Sorter {
             }
         }
 
-            return arrayOfStudentsObject;
+        return arrayOfStudentsObject;
     }
 
     public static Comparable[] insertionSortComparable(Comparable[] arrayOfStudents) {

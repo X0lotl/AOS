@@ -5,7 +5,7 @@ public class SorterTest {
         Student[] listOfStudents = {
                 new Student("Khomichenko Danylo", 100, 2003),
                 new Student("Tarasenko Artem", 30, 2004),
-                new Student("Snow Anna",66, 2005)
+                new Student("Snow Anna", 66, 2005)
         };
         System.out.println("Your array before sorting: \n" + Arrays.toString(listOfStudents));
 
@@ -29,7 +29,7 @@ public class SorterTest {
         System.out.println('\n' + "Your array is sorted by name through selection sorter: \n" + Arrays.toString(listOfStudents));
         Sorter.insertionSortComparator(compareStudentName, listOfStudents);//comparing name through insertion sort with comparator
         System.out.println('\n' + "Your array is sorted by name through insertion sorter: \n" + Arrays.toString(listOfStudents));
-        Sorter.combSortComparator(compareStudentName,listOfStudents);//comparing name through comb sort with comparator
+        Sorter.combSortComparator(compareStudentName, listOfStudents);//comparing name through comb sort with comparator
         System.out.println('\n' + "Your array is sorted by name through insertion sorter: \n" + Arrays.toString(listOfStudents));
 
         CompareStudentsYearOfBirthFromTheOldest compareStudentsYearOfBirthFromTheOldest = new CompareStudentsYearOfBirthFromTheOldest();
