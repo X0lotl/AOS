@@ -43,6 +43,8 @@ public class SorterTest {
         System.out.println('\n' + "Your array is sorted by year of birth from the oldest through insertion sort: \n" + Arrays.toString(listOfStudents));
         Sorter.combSortComparator(compareStudentsYearOfBirthFromTheOldest, listOfStudents);//comparing year of birth through comb sort with comparator
         System.out.println('\n' + "Your array is sorted by year of birth from the oldest through comb sort: \n" + Arrays.toString(listOfStudents));
+        Sorter.shellSortComparator(compareStudentsYearOfBirthFromTheOldest, listOfStudents);
+        System.out.println('\n' + "Your array is sorted by year of birth from the oldest through shell sort: \n" + Arrays.toString(listOfStudents));
 
         CompareStudentsYearOfBirthYoungest compareStudentsYearOfBirthYoungest = new CompareStudentsYearOfBirthYoungest();
         Sorter.bubbleSortComparator(compareStudentsYearOfBirthYoungest, listOfStudents);
