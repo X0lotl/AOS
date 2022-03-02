@@ -1,6 +1,21 @@
 import java.util.Comparator;
 
 public class Sorter {
+    public static Comparable[] shellSortComparator(Comparable[] arrayOfStudents){
+        for (int gap = arrayOfStudents.length / 2; gap > 0; gap /= 2){
+            for(int i = gap; i < arrayOfStudents.length; i++){
+                Comparable tempComparable = arrayOfStudents[i];
+                int j;
+
+                for(j = i; j >= gap && arrayOfStudents[j - gap].compareTo(tempComparable) > 0; j -= gap){
+                    arrayOfStudents[j] = arrayOfStudents[j - gap];
+                }
+
+                arrayOfStudents[j] = tempComparable;
+            }
+        }
+        return arrayOfStudents;
+    }
     public static Comparable[] combSortComparable(Comparable[] arrayOfStudents) {
         int gap = arrayOfStudents.length;
         boolean isSwapped = true;
