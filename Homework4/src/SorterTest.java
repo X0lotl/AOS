@@ -11,7 +11,7 @@ public class SorterTest {
 
         /*To see the working of the program choose the
         method of sort you want to use and comment others*/
-        
+
         Sorter.combSortComparable(listOfStudents);
         System.out.println('\n' + "Your array is sorted by average grade through comb sorter: \n" + Arrays.toString(listOfStudents));
         Sorter.insertionSortComparable(listOfStudents);

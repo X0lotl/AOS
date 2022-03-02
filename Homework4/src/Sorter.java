@@ -85,7 +85,7 @@ public class Sorter {
             Comparable key = arrayOfStudents[i];
             int j = i - 1;
 
-            while (j >= 0 && key.compareTo(arrayOfStudents[j]) > 0) {
+            while (j >= 0 && key.compareTo(arrayOfStudents[j]) < 0) {
                 Comparable tempComparable = arrayOfStudents[j];
                 arrayOfStudents[j] = arrayOfStudents[j + 1];
                 arrayOfStudents[j + 1] = tempComparable;
