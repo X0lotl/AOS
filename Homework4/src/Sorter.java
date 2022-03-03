@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class Sorter {
 
-    public static Object[] swap(Object[] array, int index1, int index2){
+    public static Object[] swap(Object[] array, int index1, int index2) {
         Object tempComparable = array[index1];
         array[index2] = array[index1];
         array[index1] = tempComparable;
@@ -11,7 +11,7 @@ public class Sorter {
         return array;
     }
 
-    public static Comparable[] swap(Comparable[] array, int index1, int index2){
+    public static Comparable[] swap(Comparable[] array, int index1, int index2) {
         Comparable tempComparable = array[index1];
         array[index2] = array[index1];
         array[index1] = tempComparable;
@@ -19,37 +19,37 @@ public class Sorter {
         return array;
     }
 
-    public static Comparable[] quickSortComparable(Comparable[] arrayOfStudents) {
-        int minIndex = 0;
-        int maxIndex = arrayOfStudents.length - 1;
+    public static Comparable[] quickSortComparable(Comparable[] arrayOfStudents, int minIndex, int maxIndex) {
+        int leftPointer = minIndex;
+        int rightPointer = maxIndex;
 
-        if (minIndex >= maxIndex) {
+        if(minIndex >= maxIndex){
             return arrayOfStudents;
         }
 
         int pivotIndex = new Random().nextInt(maxIndex - minIndex) + minIndex;
         Comparable pivot = arrayOfStudents[pivotIndex];
-        Comparable tempComparable = arrayOfStudents[pivotIndex];
-        arrayOfStudents[pivotIndex] = arrayOfStudents[maxIndex];
-        arrayOfStudents[maxIndex] = tempComparable;
+        swap(arrayOfStudents, pivotIndex, maxIndex);
 
-        int leftPointer = minIndex;
-        int rightPointer = maxIndex;
 
-        while(leftPointer < rightPointer){
+        while (leftPointer < rightPointer) {
 
-            while (arrayOfStudents[leftPointer].compareTo(pivot) <= 0 && leftPointer < rightPointer){
+            while (arrayOfStudents[leftPointer].compareTo(pivot) <= 0 && leftPointer < rightPointer) {
                 leftPointer++;
             }
 
-            while (arrayOfStudents[rightPointer].compareTo(pivot) >= 0 && leftPointer < rightPointer){
-                rightPointer++;
+            while (arrayOfStudents[rightPointer].compareTo(pivot) >= 0 && leftPointer < rightPointer) {
+                rightPointer--;
             }
 
+            swap(arrayOfStudents, leftPointer, rightPointer);
 
         }
 
-        //tempComparable
+        swap(arrayOfStudents, leftPointer, maxIndex);
+
+        quickSortComparable(arrayOfStudents, minIndex, leftPointer - 1);
+        quickSortComparable(arrayOfStudents, leftPointer + 1, maxIndex);
 
         return arrayOfStudents;
     }
@@ -100,9 +100,7 @@ public class Sorter {
 
             for (int i = 0; i < arrayOfStudents.length - gap; i++) {
                 if (arrayOfStudents[i].compareTo(arrayOfStudents[i + gap]) > 0) {
-                    Comparable tempComparable = arrayOfStudents[i];
-                    arrayOfStudents[i] = arrayOfStudents[i + gap];
-                    arrayOfStudents[i + gap] = tempComparable;
+                    swap(arrayOfStudents, i, i + gap);
                     isSwapped = true;
                 }
             }
@@ -122,9 +120,7 @@ public class Sorter {
 
             for (int i = 0; i < arrayOfStudentsObject.length - gap; i++) {
                 if (comparator.compare(arrayOfStudentsObject[i], arrayOfStudentsObject[i + gap]) > 0) {
-                    Object tempObject = arrayOfStudentsObject[i];
-                    arrayOfStudentsObject[i] = arrayOfStudentsObject[i + gap];
-                    arrayOfStudentsObject[i + gap] = tempObject;
+                    swap(arrayOfStudentsObject, i, i + gap);
                     isSwapped = true;
                 }
             }
@@ -139,9 +135,7 @@ public class Sorter {
             int j = i - 1;
 
             while (j >= 0 && key.compareTo(arrayOfStudents[j]) < 0) {
-                Comparable tempComparable = arrayOfStudents[j];
-                arrayOfStudents[j] = arrayOfStudents[j + 1];
-                arrayOfStudents[j + 1] = tempComparable;
+                swap(arrayOfStudents, j, j + 1);
                 j--;
             }
         }
@@ -155,9 +149,7 @@ public class Sorter {
             int j = i - 1;
 
             while (j >= 0 && comparator.compare(key, arrayOfStudentsObjects[j]) < 0) {
-                Object tempComparable = arrayOfStudentsObjects[j];
-                arrayOfStudentsObjects[j] = arrayOfStudentsObjects[j + 1];
-                arrayOfStudentsObjects[j + 1] = tempComparable;
+                swap(arrayOfStudentsObjects, j, j + 1);
                 j--;
             }
         }
@@ -165,33 +157,32 @@ public class Sorter {
         return arrayOfStudentsObjects;
     }
 
-    public static Comparable[] selectionSortComparable(Comparable[] arrayOfStudentsObjects) {
-        for (int i = 0; i < arrayOfStudentsObjects.length - 1; i++) {
+    public static Comparable[] selectionSortComparable(Comparable[] arrayOfStudents) {
+        for (int i = 0; i < arrayOfStudents.length - 1; i++) {
             int minIndex = i;
 
-            for (int j = i + 1; j < arrayOfStudentsObjects.length; j++)
-                if (arrayOfStudentsObjects[j].compareTo(arrayOfStudentsObjects[minIndex]) < 0)
+            for (int j = i + 1; j < arrayOfStudents.length; j++) {
+                if (arrayOfStudents[j].compareTo(arrayOfStudents[minIndex]) < 0) {
                     minIndex = j;
-            Comparable tempComparable = arrayOfStudentsObjects[minIndex];
-            arrayOfStudentsObjects[minIndex] = arrayOfStudentsObjects[i];
-            arrayOfStudentsObjects[i] = tempComparable;
+                }
+            }
+
+            swap(arrayOfStudents, minIndex, i);
         }
 
-        return arrayOfStudentsObjects;
+        return arrayOfStudents;
     }
 
     public static Object[] selectionSorterComparator(Comparator comparator, Object[] arrayOfStudentsObjects) {
         for (int i = 0; i < arrayOfStudentsObjects.length - 1; i++) {
             int minIndex = i;
 
-            for (int j = i + 1; j < arrayOfStudentsObjects.length; j++)
-                if (comparator.compare(arrayOfStudentsObjects[j], arrayOfStudentsObjects[minIndex]) < 0){
+            for (int j = i + 1; j < arrayOfStudentsObjects.length; j++) {
+                if (comparator.compare(arrayOfStudentsObjects[j], arrayOfStudentsObjects[minIndex]) < 0) {
                     minIndex = j;
                 }
+            }
             swap(arrayOfStudentsObjects, minIndex, i);
-            Object temp = arrayOfStudentsObjects[minIndex];
-            arrayOfStudentsObjects[minIndex] = arrayOfStudentsObjects[i];
-            arrayOfStudentsObjects[i] = temp;
         }
 
         return arrayOfStudentsObjects;
@@ -213,7 +204,7 @@ public class Sorter {
         for (int i = 0; i < arrayOfStudents.length - 1; i++) {
             for (int j = 0; j < arrayOfStudents.length - i - 1; j++) {
                 if (arrayOfStudents[j].compareTo(arrayOfStudents[j + 1]) > 0) {
-                    swap(arrayOfStudents, j, j + 1);
+                   swap(arrayOfStudents, j, j + 1);
                 }
             }
         }
