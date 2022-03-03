@@ -5,16 +5,16 @@ public class Sorter {
 
     public static Object[] swap(Object[] array, int index1, int index2) {
         Object tempComparable = array[index1];
-        array[index2] = array[index1];
-        array[index1] = tempComparable;
+        array[index1] = array[index2];
+        array[index2] = tempComparable;
 
         return array;
     }
 
     public static Comparable[] swap(Comparable[] array, int index1, int index2) {
         Comparable tempComparable = array[index1];
-        array[index2] = array[index1];
-        array[index1] = tempComparable;
+        array[index1] = array[index2];
+        array[index2] = tempComparable;
 
         return array;
     }
@@ -204,7 +204,7 @@ public class Sorter {
         for (int i = 0; i < arrayOfStudents.length - 1; i++) {
             for (int j = 0; j < arrayOfStudents.length - i - 1; j++) {
                 if (arrayOfStudents[j].compareTo(arrayOfStudents[j + 1]) > 0) {
-                   swap(arrayOfStudents, j, j + 1);
+                  swap(arrayOfStudents, j, j + 1);
                 }
             }
         }

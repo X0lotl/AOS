@@ -4,9 +4,7 @@
     <list default="true" id="9158f08e-d45a-481d-b589-737180731831" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Homework4/Sorter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Homework4/Sorter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Homework4/SorterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Homework4/SorterTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sorter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SorterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SorterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
