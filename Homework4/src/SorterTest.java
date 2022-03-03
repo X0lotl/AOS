@@ -19,7 +19,7 @@ public class SorterTest {
         method of sort you want to use and comment others*/
 
         Sorter.quickSortComparable(listOfStudents, 0, listOfStudents.length - 1);
-        System.out.println('\n' + "Your array is sorted by average through quick sorter: \n" + Arrays.toString(listOfStudents));
+        System.out.println('\n' + "Your array is sorted by average grade through quick sorter: \n" + Arrays.toString(listOfStudents));
         Sorter.combSortComparable(listOfStudents);
         System.out.println('\n' + "Your array is sorted by average grade through comb sorter: \n" + Arrays.toString(listOfStudents));
         Sorter.insertionSortComparable(listOfStudents);
