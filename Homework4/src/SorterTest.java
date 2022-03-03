@@ -5,7 +5,13 @@ public class SorterTest {
         Student[] listOfStudents = {
                 new Student("Khomichenko Danylo", 100, 2003),
                 new Student("Tarasenko Artem", 30, 2004),
-                new Student("Snow Anna", 66, 2005)
+                new Student("Snow Anna", 66, 2005),
+                new Student("Ivanovich Ivan", 81, 2002),
+                new Student("Juvianovich Jelman", 71, 2004),
+                new Student("Bilous Mikita", 82, 2004),
+                new Student("Gitelman Helga", 91, 2003),
+                new Student("Ponomarenko Nadya", 92, 2005),
+                new Student("Kovalenko Yelezaveta", 76, 2004)
         };
         System.out.println("Your array before sorting: \n" + Arrays.toString(listOfStudents));
 

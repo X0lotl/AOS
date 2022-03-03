@@ -14,7 +14,7 @@ public class Student implements Comparable<Student> {
 
     @Override
     public int compareTo(Student that) {
-        return this.averageGradeInt - that.averageGradeInt;
+        return  that.averageGradeInt - this.averageGradeInt ;
     }
 
     @Override
