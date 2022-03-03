@@ -14,7 +14,7 @@ public class Student implements Comparable<Student> {
 
     @Override
     public int compareTo(Student that) {
-        return  that.averageGradeInt - this.averageGradeInt ;
+        return that.averageGradeInt - this.averageGradeInt;
     }
 
     @Override
@@ -30,12 +30,15 @@ public class Student implements Comparable<Student> {
 class CompareStudentName implements Comparator<Student> {
     @Override
     public int compare(Student student1, Student student2) {
-        int i = 0;
-        while (student1.nameOfStudent.charAt(i) - student2.nameOfStudent.charAt(i) == 0) {
-            i++;
-            return student1.nameOfStudent.charAt(i) - student2.nameOfStudent.charAt(i);
+        int maxValueOfI = Math.max(student1.nameOfStudent.length(), student2.nameOfStudent.length());
+
+        for (int i = 0; i <= maxValueOfI; i++) {
+            if (student1.nameOfStudent.charAt(i) - student2.nameOfStudent.charAt(i) != 0) {
+                return student1.nameOfStudent.charAt(i) - student2.nameOfStudent.charAt(i);
+            }
         }
-        return student1.nameOfStudent.charAt(i) - student2.nameOfStudent.charAt(i);
+
+        return 0;
     }
 }
 
