@@ -18,6 +18,8 @@ public class SorterTest {
         /*To see the working of the program choose the
         method of sort you want to use and comment others*/
 
+        Sorter.quickSortComparable(listOfStudents, 0, listOfStudents.length - 1);
+        System.out.println('\n' + "Your array is sorted by average through quick sorter: \n" + Arrays.toString(listOfStudents));
         Sorter.combSortComparable(listOfStudents);
         System.out.println('\n' + "Your array is sorted by average grade through comb sorter: \n" + Arrays.toString(listOfStudents));
         Sorter.insertionSortComparable(listOfStudents);
@@ -28,8 +30,6 @@ public class SorterTest {
         System.out.println('\n' + "Your array is sorted by average through selection sorter: \n" + Arrays.toString(listOfStudents));
         Sorter.shellSortComparable(listOfStudents); //average grade compairing with shell sorter
         System.out.println('\n' + "Your array is sorted by average through shell sorter: \n" + Arrays.toString(listOfStudents));
-        Sorter.quickSortComparable(listOfStudents, 0, listOfStudents.length - 1);
-        System.out.println('\n' + "Your array is sorted by average through quick sorter: \n" + Arrays.toString(listOfStudents));
 
         CompareStudentName compareStudentName = new CompareStudentName();
         Sorter.bubbleSortComparator(compareStudentName, listOfStudents); //comparing name through bubble sort with comparator
@@ -39,7 +39,7 @@ public class SorterTest {
         Sorter.insertionSortComparator(compareStudentName, listOfStudents);//comparing name through insertion sort with comparator
         System.out.println('\n' + "Your array is sorted by name through insertion sorter: \n" + Arrays.toString(listOfStudents));
         Sorter.combSortComparator(compareStudentName, listOfStudents);//comparing name through comb sort with comparator
-        System.out.println('\n' + "Your array is sorted by name through insertion sorter: \n" + Arrays.toString(listOfStudents));
+        System.out.println('\n' + "Your array is sorted by name through comb sorter: \n" + Arrays.toString(listOfStudents));
         Sorter.shellSortComparator(compareStudentName, listOfStudents);//comparing name through shell sort with comparator
         System.out.println('\n' + "Your array is sorter by name through shell sorter: \n" + Arrays.toString(listOfStudents));
 

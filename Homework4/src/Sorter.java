@@ -18,6 +18,40 @@ public class Sorter {
 
         return array;
     }
+    public static Object[] quickSortComparator(Comparator comparator, Object[] arrayOfStudentsObject, int minIndex, int maxIndex) {
+        int leftPointer = minIndex;
+        int rightPointer = maxIndex;
+
+        if(minIndex >= maxIndex){
+            return arrayOfStudentsObject;
+        }
+
+        int pivotIndex = new Random().nextInt(maxIndex - minIndex) + minIndex;
+        Object pivot = arrayOfStudentsObject[pivotIndex];
+        swap(arrayOfStudentsObject, pivotIndex, maxIndex);
+
+
+        while (leftPointer < rightPointer) {
+
+            while (comparator.compare(arrayOfStudentsObject[leftPointer], pivot) <= 0 && leftPointer < rightPointer) {
+                leftPointer++;
+            }
+
+            while (comparator.compare(arrayOfStudentsObject[rightPointer], pivot) >= 0 && leftPointer < rightPointer) {
+                rightPointer--;
+            }
+
+            swap(arrayOfStudentsObject, leftPointer, rightPointer);
+
+        }
+
+        swap(arrayOfStudentsObject, leftPointer, maxIndex);
+
+        quickSortComparator(comparator, arrayOfStudentsObject, minIndex, leftPointer - 1);
+        quickSortComparator(comparator, arrayOfStudentsObject, leftPointer + 1, maxIndex);
+
+        return arrayOfStudentsObject;
+    }
 
     public static Comparable[] quickSortComparable(Comparable[] arrayOfStudents, int minIndex, int maxIndex) {
         int leftPointer = minIndex;
