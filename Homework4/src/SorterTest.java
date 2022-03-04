@@ -44,8 +44,10 @@ public class SorterTest {
         System.out.println('\n' + "Your array is sorted by name through comb sorter: \n" + Arrays.toString(listOfStudents));
         Sorter.shellSortComparator(compareStudentName, listOfStudents);//comparing name through shell sort with comparator
         System.out.println('\n' + "Your array is sorted by name through shell sorter: \n" + Arrays.toString(listOfStudents));
-        Sorter.quickSortComparator(compareStudentName,listOfStudents, 0 ,listOfStudents.length - 1);
+        Sorter.quickSortComparator(compareStudentName, listOfStudents, 0, listOfStudents.length - 1);
         System.out.println('\n' + "Your array is sorted by name through quick sorter: \n" + Arrays.toString(listOfStudents));
+        Sorter.mergeSortComparator(compareStudentName, listOfStudents);
+        System.out.println('\n' + "Your array is sorted by name through merge sorter: \n" + Arrays.toString(listOfStudents));
 
         CompareStudentsYearOfBirthFromTheOldest compareStudentsYearOfBirthFromTheOldest = new CompareStudentsYearOfBirthFromTheOldest();
         Sorter.bubbleSortComparator(compareStudentsYearOfBirthFromTheOldest, listOfStudents); //comparing year of birth through bubble sort with comparator
@@ -60,6 +62,8 @@ public class SorterTest {
         System.out.println('\n' + "Your array is sorted by year of birth from the oldest through shell sort: \n" + Arrays.toString(listOfStudents));
         Sorter.quickSortComparator(compareStudentsYearOfBirthFromTheOldest, listOfStudents, 0, listOfStudents.length - 1);
         System.out.println('\n' + "Your array is sorted by year of birth from the oldest through quick sort: \n" + Arrays.toString(listOfStudents));
+        Sorter.mergeSortComparator(compareStudentsYearOfBirthFromTheOldest, listOfStudents);
+        System.out.println('\n' + "Your array is sorted by year of birth from the oldest through merge sort: \n" + Arrays.toString(listOfStudents));
 
         CompareStudentsYearOfBirthYoungest compareStudentsYearOfBirthYoungest = new CompareStudentsYearOfBirthYoungest();
         Sorter.bubbleSortComparator(compareStudentsYearOfBirthYoungest, listOfStudents);
@@ -74,5 +78,7 @@ public class SorterTest {
         System.out.println('\n' + "Your array is sorted by year of birth from the youngest through shell sort: \n" + Arrays.toString(listOfStudents));
         Sorter.quickSortComparator(compareStudentsYearOfBirthYoungest, listOfStudents, 0, listOfStudents.length - 1);
         System.out.println('\n' + "Your array is sorted by year of birth from the youngest through quick sort: \n" + Arrays.toString(listOfStudents));
+        Sorter.mergeSortComparator(compareStudentsYearOfBirthYoungest, listOfStudents);
+        System.out.println('\n' + "Your array is sorted by year of birth from the youngest through merge sort: \n" + Arrays.toString(listOfStudents));
     }
 }

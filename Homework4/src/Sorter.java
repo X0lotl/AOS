@@ -45,7 +45,7 @@ public class Sorter {
         int i = 0, j = 0, k = 0;
 
         while (i < leftLength && j < rightLength) {
-            if (comparator.compare(leftHalfArray[i],rightHalfArray[j]) <= 0) {
+            if (comparator.compare(leftHalfArray[i], rightHalfArray[j]) <= 0) {
                 arrayOfStudents[k] = leftHalfArray[i];
                 i++;
             } else {
