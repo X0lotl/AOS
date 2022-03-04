@@ -17,10 +17,10 @@ public class Sorter {
 
     }
 
-    public static void mergeSortComparable(Comparable[] arrayOfStudents){
+    public static void mergeSortComparable(Comparable[] arrayOfStudents) {
         int lengthOfArray = arrayOfStudents.length;
 
-        if(lengthOfArray < 2){
+        if (lengthOfArray < 2) {
             return;
         }
 
@@ -29,11 +29,11 @@ public class Sorter {
         Comparable[] leftHalfArray = new Comparable[midIndex];
         Comparable[] rightHalfArray = new Comparable[lengthOfArray - midIndex];
 
-        for(int i = 0; i < midIndex; i++){
+        for (int i = 0; i < midIndex; i++) {
             leftHalfArray[i] = arrayOfStudents[i];
         }
 
-        for(int i = midIndex; i < lengthOfArray; i++){
+        for (int i = midIndex; i < lengthOfArray; i++) {
             rightHalfArray[i - midIndex] = arrayOfStudents[i];
         }
 
@@ -44,24 +44,25 @@ public class Sorter {
         int rightLength = rightHalfArray.length;
 
         int i = 0, j = 0, k = 0;
-        while (i < leftLength && j < rightLength){
-            if (leftHalfArray[i].compareTo(rightHalfArray[j]) <= 0){
+
+        while (i < leftLength && j < rightLength) {
+            if (leftHalfArray[i].compareTo(rightHalfArray[j]) <= 0) {
                 arrayOfStudents[k] = leftHalfArray[i];
                 i++;
-            } else{
+            } else {
                 arrayOfStudents[k] = rightHalfArray[j];
                 j++;
             }
             k++;
         }
 
-        while(i < leftLength){
+        while (i < leftLength) {
             arrayOfStudents[k] = leftHalfArray[i];
             i++;
             k++;
         }
 
-        while(j < rightLength){
+        while (j < rightLength) {
             arrayOfStudents[k] = rightHalfArray[j];
             j++;
             k++;
