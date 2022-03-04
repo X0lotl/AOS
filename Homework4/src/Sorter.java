@@ -17,6 +17,55 @@ public class Sorter {
 
     }
 
+    public static void mergeSortComparable(Comparable[] arrayOfStudents){
+        int lengthOfArray = arrayOfStudents.length;
+
+        if(lengthOfArray < 2){
+            return;
+        }
+
+        int midIndex = lengthOfArray / 2;
+        Comparable[] leftHalfArray = new Comparable[midIndex];
+        Comparable[] rightHalfArray = new Comparable[lengthOfArray - midIndex];
+
+        for(int i = 0; i < midIndex; i++){
+            leftHalfArray[i] = arrayOfStudents[i];
+        }
+
+        for(int i = midIndex; i < lengthOfArray; i++){
+            rightHalfArray[i - midIndex] = arrayOfStudents[i];
+        }
+
+        mergeSortComparable(leftHalfArray);
+        mergeSortComparable(rightHalfArray);
+
+        int leftLength = leftHalfArray.length;
+        int rightLength = rightHalfArray.length;
+
+        int i = 0, j = 0, k = 0;
+        while (i < leftLength && j < rightLength){
+            if (arrayOfStudents[k].compareTo(leftHalfArray[i]) <= 0){
+                arrayOfStudents[k] = leftHalfArray[i];
+                i++;
+            } else{
+                arrayOfStudents[k] = rightHalfArray[j];
+                j++;
+            }
+            k++;
+        }
+
+        while(i < leftLength){
+            arrayOfStudents[k] = leftHalfArray[i];
+            i++;
+            k++;
+        }
+
+        while(j < rightLength){
+            arrayOfStudents[k] = rightHalfArray[j];
+            j++;
+            k++;
+        }
+    }
 
     public static void quickSortComparator(Comparator comparator, Object[] arrayOfStudentsObject, int minIndex, int maxIndex) {
         int leftPointer = minIndex;

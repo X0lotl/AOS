@@ -18,6 +18,8 @@ public class SorterTest {
         /*To see the working of the program choose the
         method of sort you want to use and comment others*/
 
+        Sorter.mergeSortComparable(listOfStudents);
+        System.out.println('\n' + "Your array is sorted by average grade through merge sorter: \n" + Arrays.toString(listOfStudents));
         Sorter.quickSortComparable(listOfStudents, 0, listOfStudents.length - 1);
         System.out.println('\n' + "Your array is sorted by average grade through quick sorter: \n" + Arrays.toString(listOfStudents));
         Sorter.combSortComparable(listOfStudents);

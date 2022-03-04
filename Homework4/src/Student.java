@@ -32,7 +32,7 @@ class CompareStudentName implements Comparator<Student> {
     public int compare(Student student1, Student student2) {
         int maxValueOfI = Math.max(student1.nameOfStudent.length(), student2.nameOfStudent.length());
 
-        for (int i = 0; i <= maxValueOfI; i++) {
+        for (int i = 0; i < maxValueOfI; i++) {
             if (student1.nameOfStudent.charAt(i) - student2.nameOfStudent.charAt(i) != 0) {
                 return student1.nameOfStudent.charAt(i) - student2.nameOfStudent.charAt(i);
             }
