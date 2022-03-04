@@ -17,6 +17,57 @@ public class Sorter {
 
     }
 
+    public static void mergeSortComparator(Comparator comparator, Object[] arrayOfStudents) {
+        int lengthOfArray = arrayOfStudents.length;
+
+        if (lengthOfArray < 2) {
+            return;
+        }
+
+        int midIndex = lengthOfArray / 2;
+        Object[] leftHalfArray = new Comparable[midIndex];
+        Object[] rightHalfArray = new Comparable[lengthOfArray - midIndex];
+
+        for (int i = 0; i < midIndex; i++) {
+            leftHalfArray[i] = arrayOfStudents[i];
+        }
+
+        for (int i = midIndex; i < lengthOfArray; i++) {
+            rightHalfArray[i - midIndex] = arrayOfStudents[i];
+        }
+
+        mergeSortComparator(comparator, leftHalfArray);
+        mergeSortComparator(comparator, rightHalfArray);
+
+        int leftLength = leftHalfArray.length;
+        int rightLength = rightHalfArray.length;
+
+        int i = 0, j = 0, k = 0;
+
+        while (i < leftLength && j < rightLength) {
+            if (comparator.compare(leftHalfArray[i],rightHalfArray[j]) <= 0) {
+                arrayOfStudents[k] = leftHalfArray[i];
+                i++;
+            } else {
+                arrayOfStudents[k] = rightHalfArray[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < leftLength) {
+            arrayOfStudents[k] = leftHalfArray[i];
+            i++;
+            k++;
+        }
+
+        while (j < rightLength) {
+            arrayOfStudents[k] = rightHalfArray[j];
+            j++;
+            k++;
+        }
+    }
+
     public static void mergeSortComparable(Comparable[] arrayOfStudents) {
         int lengthOfArray = arrayOfStudents.length;
 
