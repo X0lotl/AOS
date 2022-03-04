@@ -25,6 +25,7 @@ public class Sorter {
         }
 
         int midIndex = lengthOfArray / 2;
+
         Comparable[] leftHalfArray = new Comparable[midIndex];
         Comparable[] rightHalfArray = new Comparable[lengthOfArray - midIndex];
 
@@ -44,7 +45,7 @@ public class Sorter {
 
         int i = 0, j = 0, k = 0;
         while (i < leftLength && j < rightLength){
-            if (arrayOfStudents[k].compareTo(leftHalfArray[i]) <= 0){
+            if (leftHalfArray[i].compareTo(rightHalfArray[j]) <= 0){
                 arrayOfStudents[k] = leftHalfArray[i];
                 i++;
             } else{
