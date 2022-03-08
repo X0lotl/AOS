@@ -11,6 +11,6 @@ public class IntNumber implements Comparable<IntNumber> {
     }
     @Override
     public String toString(){
-        return "\n number: " + number;
+        return "" + number;
     }
 }

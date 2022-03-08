@@ -10,18 +10,23 @@ public class IntArrayTest {
         PrintWriter out = new PrintWriter(new FileWriter("IntArray.txt"));
         Random random = new Random();
         for(int i = 0; i < 40000; i++){
-            out.println(random.nextInt());
+            out.print(random.nextInt() + " ");
         }
     }
 
-    private static void readArrayFromTxt(IntNumber[] arrayOfInt, int arrayLength, String txtSource){
-        arrayOfInt = new IntNumber[arrayLength];
+    private static IntNumber[] readArrayFromTxt(int arrayLength, String txtSource){
+        IntNumber[] arrayOfInt = new IntNumber[arrayLength];
         Scanner scanner = new Scanner(txtSource);
+        int tempInt;
+
         for(int i = 0; i < arrayLength - 1; i++){
             if(scanner.hasNext()){
-                arrayOfInt[i] = new IntNumber(scanner.nextInt());
+                tempInt = scanner.nextInt();
+                arrayOfInt[i] = new IntNumber(tempInt);
             }
         }
+
+        return arrayOfInt;
     }
 
     private static IntNumber[] generateNewIntArray(int arrayLength){
@@ -35,12 +40,15 @@ public class IntArrayTest {
     }
 
     public static void main(String[] args) throws IOException {
-        IntNumber[] arrayOfInt = new IntNumber[0];
+        IntNumber[] arrayOfInt;
         //generateNewArrayInTxt();
-        //readArrayFromTxt(arrayOfInt, 10, "IntArray.txt");
-        arrayOfInt = generateNewIntArray(1024);
+        arrayOfInt = readArrayFromTxt(10, "IntArray.txt");
+        //arrayOfInt = generateNewIntArray(1024);
 
         System.out.println("Your array before sorting: " + Arrays.toString(arrayOfInt));
+
+        Sorter.mergeSortComparable(arrayOfInt);
+        System.out.println('\n' + "Your array is sorted through merge sorter: \n" + Arrays.toString(arrayOfInt));
 
     }
 }
