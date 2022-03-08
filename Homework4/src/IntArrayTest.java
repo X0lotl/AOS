@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -23,9 +24,23 @@ public class IntArrayTest {
         }
     }
 
+    private static IntNumber[] generateNewIntArray(int arrayLength){
+        IntNumber[] arrayOfInt = new IntNumber[arrayLength];
+        Random random = new Random();
+        for(int i = 0; i < arrayLength; i++){
+            arrayOfInt[i] = new IntNumber(random.nextInt());
+        }
+
+        return arrayOfInt;
+    }
+
     public static void main(String[] args) throws IOException {
         IntNumber[] arrayOfInt = new IntNumber[0];
         //generateNewArrayInTxt();
-        readArrayFromTxt(arrayOfInt, 1024, "IntArray.txt");
+        //readArrayFromTxt(arrayOfInt, 10, "IntArray.txt");
+        arrayOfInt = generateNewIntArray(1024);
+
+        System.out.println("Your array before sorting: " + Arrays.toString(arrayOfInt));
+
     }
 }
