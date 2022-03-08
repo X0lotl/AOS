@@ -115,7 +115,7 @@ public class Sorter {
 
         int pivotIndex = new Random().nextInt(maxIndex - minIndex) + minIndex;
         Object pivot = arrayOfStudentsObject[pivotIndex];
-        swap(arrayOfStudentsObject, pivotIndex, maxIndex);
+        Switcher.swap(arrayOfStudentsObject, pivotIndex, maxIndex);
 
 
         while (leftPointer < rightPointer) {
@@ -128,11 +128,11 @@ public class Sorter {
                 rightPointer--;
             }
 
-            swap(arrayOfStudentsObject, leftPointer, rightPointer);
+            Switcher.swap(arrayOfStudentsObject, leftPointer, rightPointer);
 
         }
 
-        swap(arrayOfStudentsObject, leftPointer, maxIndex);
+        Switcher.swap(arrayOfStudentsObject, leftPointer, maxIndex);
 
         quickSortComparator(comparator, arrayOfStudentsObject, minIndex, leftPointer - 1);
         quickSortComparator(comparator, arrayOfStudentsObject, leftPointer + 1, maxIndex);
@@ -149,7 +149,7 @@ public class Sorter {
 
         int pivotIndex = new Random().nextInt(maxIndex - minIndex) + minIndex;
         Comparable pivot = arrayOfStudents[pivotIndex];
-        swap(arrayOfStudents, pivotIndex, maxIndex);
+        Switcher.swap(arrayOfStudents, pivotIndex, maxIndex);
 
 
         while (leftPointer < rightPointer) {
@@ -162,11 +162,11 @@ public class Sorter {
                 rightPointer--;
             }
 
-            swap(arrayOfStudents, leftPointer, rightPointer);
+            Switcher.swap(arrayOfStudents, leftPointer, rightPointer);
 
         }
 
-        swap(arrayOfStudents, leftPointer, maxIndex);
+        Switcher.swap(arrayOfStudents, leftPointer, maxIndex);
 
         quickSortComparable(arrayOfStudents, minIndex, leftPointer - 1);
         quickSortComparable(arrayOfStudents, leftPointer + 1, maxIndex);
@@ -216,7 +216,7 @@ public class Sorter {
 
             for (int i = 0; i < arrayOfStudentsObject.length - gap; i++) {
                 if (comparator.compare(arrayOfStudentsObject[i], arrayOfStudentsObject[i + gap]) > 0) {
-                    swap(arrayOfStudentsObject, i, i + gap);
+                    Switcher.swap(arrayOfStudentsObject, i, i + gap);
                     isSwapped = true;
                 }
             }
@@ -236,7 +236,7 @@ public class Sorter {
 
             for (int i = 0; i < arrayOfStudents.length - gap; i++) {
                 if (arrayOfStudents[i].compareTo(arrayOfStudents[i + gap]) > 0) {
-                    swap(arrayOfStudents, i, i + gap);
+                    Switcher.swap(arrayOfStudents, i, i + gap);
                     isSwapped = true;
                 }
             }
@@ -250,7 +250,7 @@ public class Sorter {
             int j = i - 1;
 
             while (j >= 0 && comparator.compare(key, arrayOfStudentsObjects[j]) < 0) {
-                swap(arrayOfStudentsObjects, j, j + 1);
+                Switcher.swap(arrayOfStudentsObjects, j, j + 1);
                 j--;
             }
         }
@@ -263,7 +263,7 @@ public class Sorter {
             int j = i - 1;
 
             while (j >= 0 && key.compareTo(arrayOfStudents[j]) < 0) {
-                swap(arrayOfStudents, j, j + 1);
+                Switcher.swap(arrayOfStudents, j, j + 1);
                 j--;
             }
         }
@@ -279,7 +279,7 @@ public class Sorter {
                     minIndex = j;
                 }
             }
-            swap(arrayOfStudentsObjects, minIndex, i);
+            Switcher.swap(arrayOfStudentsObjects, minIndex, i);
         }
 
     }
@@ -294,7 +294,7 @@ public class Sorter {
                 }
             }
 
-            swap(arrayOfStudents, minIndex, i);
+            Switcher.swap(arrayOfStudents, minIndex, i);
         }
 
     }
@@ -303,7 +303,7 @@ public class Sorter {
         for (int i = 0; i < arrayOfStudentsObjects.length - 1; i++) {
             for (int j = 0; j < arrayOfStudentsObjects.length - i - 1; j++) {
                 if (comparator.compare(arrayOfStudentsObjects[j], arrayOfStudentsObjects[j + 1]) > 0) {
-                    swap(arrayOfStudentsObjects, j, j + 1);
+                    Switcher.swap(arrayOfStudentsObjects, j, j + 1);
                 }
             }
         }
@@ -314,7 +314,7 @@ public class Sorter {
         for (int i = 0; i < arrayOfStudents.length - 1; i++) {
             for (int j = 0; j < arrayOfStudents.length - i - 1; j++) {
                 if (arrayOfStudents[j].compareTo(arrayOfStudents[j + 1]) > 0) {
-                    swap(arrayOfStudents, j, j + 1);
+                    Switcher.swap(arrayOfStudents, j, j + 1);
                 }
             }
         }
