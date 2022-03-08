@@ -1,7 +1,5 @@
+import java.io.*;
 import java.util.Arrays;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -14,15 +12,14 @@ public class IntArrayTest {
         }
     }
 
-    private static IntNumber[] readArrayFromTxt(int arrayLength, String txtSource){
+    private static IntNumber[] readArrayFromTxt(int arrayLength, String txtSource) throws FileNotFoundException {
         IntNumber[] arrayOfInt = new IntNumber[arrayLength];
-        Scanner scanner = new Scanner(txtSource);
+        Scanner scanner = new Scanner(new File(txtSource));
         int tempInt;
 
-        for(int i = 0; i < arrayLength - 1; i++){
+        for(int i = 0; i < arrayLength; i++){
             if(scanner.hasNext()){
-                tempInt = scanner.nextInt();
-                arrayOfInt[i] = new IntNumber(tempInt);
+                arrayOfInt[i] = new IntNumber(scanner.nextInt());
             }
         }
 
