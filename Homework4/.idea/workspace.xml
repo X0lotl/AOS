@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9158f08e-d45a-481d-b589-737180731831" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/IntNumber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Homework4/Sorter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Homework4/Sorter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Homework4/SorterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Homework4/SorterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IntArray.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IntArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IntArrayTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +50,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.IntArrayTest">
+    <configuration name="IntArrayTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="IntArrayTest" />
+      <module name="Homework4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SorterTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SorterTest" />
       <module name="Homework4" />
@@ -55,6 +67,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.IntArrayTest" />
         <item itemvalue="Application.SorterTest" />
       </list>
     </recent_temporary>
