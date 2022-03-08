@@ -38,14 +38,18 @@ public class IntArrayTest {
 
     public static void main(String[] args) throws IOException {
         IntNumber[] arrayOfInt;
+        IntNumber[] tempArrayOfIntForSorters;
+
         //generateNewArrayInTxt();
-        arrayOfInt = readArrayFromTxt(10, "IntArray.txt");
+
         //arrayOfInt = generateNewIntArray(1024);
+
+        arrayOfInt = readArrayFromTxt(1024, "IntArray.txt");
 
         System.out.println("Your array before sorting: " + Arrays.toString(arrayOfInt));
 
-        Sorter.mergeSortComparable(arrayOfInt);
-        System.out.println('\n' + "Your array is sorted through merge sorter: \n" + Arrays.toString(arrayOfInt));
-
+        tempArrayOfIntForSorters = arrayOfInt;
+        Sorter.mergeSortComparable(tempArrayOfIntForSorters);
+        System.out.println('\n' + "Your array is sorted through merge sorter: \n" + Arrays.toString(tempArrayOfIntForSorters));
     }
 }
