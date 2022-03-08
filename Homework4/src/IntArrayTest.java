@@ -48,8 +48,20 @@ public class IntArrayTest {
 
         System.out.println("Your array before sorting: " + Arrays.toString(arrayOfInt));
 
+        Timer timer = new Timer();
+        Double time;
+
         tempArrayOfIntForSorters = arrayOfInt;
+        timer.stopWatchAtStart();
         Sorter.mergeSortComparable(tempArrayOfIntForSorters);
+        time = timer.getElapsedTime();
         System.out.println('\n' + "Your array is sorted through merge sorter: \n" + Arrays.toString(tempArrayOfIntForSorters));
+        System.out.println("Merge sorter time : " + time);
+
+        tempArrayOfIntForSorters = arrayOfInt;
+        timer.stopWatchAtStart();
+        Sorter.quickSortComparable(tempArrayOfIntForSorters,0, tempArrayOfIntForSorters.length - 1);
+        time = timer.getElapsedTime();
+        System.out.println('\n' + "Your array is sorted through quick sorter: \n");
     }
 }
