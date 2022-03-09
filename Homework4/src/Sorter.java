@@ -140,6 +140,34 @@ public class Sorter {
     }
 
     public static void quickSortComparable(Comparable[] arrayOfStudents, int minIndex, int maxIndex) {
+        Comparable pivot = arrayOfStudents[minIndex + (maxIndex - minIndex) / 2];
+        int i = minIndex;
+        int j = maxIndex;
+
+        while (i <= j) {
+            while (arrayOfStudents[i].compareTo(pivot) < 0){
+                i++;
+            }
+
+            while (arrayOfStudents[j].compareTo(pivot) > 0) {
+                j--;
+            }
+
+            if (i <= j) {
+                Switcher.swap(arrayOfStudents, i, j);
+                i++;
+                j--;
+            }
+        }
+
+        if(minIndex < j)
+            quickSortComparable(arrayOfStudents,minIndex,j);
+        if(i < maxIndex)
+            quickSortComparable(arrayOfStudents,i,maxIndex);
+    }
+
+
+    /* public static void quickSortComparable(Comparable[] arrayOfStudents, int minIndex, int maxIndex) {
         int leftPointer = minIndex;
         int rightPointer = maxIndex;
 
@@ -171,7 +199,7 @@ public class Sorter {
         quickSortComparable(arrayOfStudents, minIndex, leftPointer - 1);
         quickSortComparable(arrayOfStudents, leftPointer + 1, maxIndex);
 
-    }
+    }*/
 
     public static void shellSortComparator(Comparator comparator, Object[] arrayOfStudentsObject) {
         for (int gap = arrayOfStudentsObject.length / 2; gap > 0; gap /= 2) {

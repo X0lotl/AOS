@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class IntArrayTest {
-    static final int ARRAY_LENGTH = 32768;
+    static final int ARRAY_LENGTH = 100;
     static final String PATH_TO_FILE_WITH_ARRAY_OF_INT = "IntArray.txt";
 
     private static void generateNewRandomArrayInTxt() throws IOException {
@@ -36,7 +36,7 @@ public class IntArrayTest {
         PrintWriter out = new PrintWriter(new FileWriter(PATH_TO_FILE_WITH_ARRAY_OF_INT));
 
         for (int i = 0; i < ARRAY_LENGTH; i++){
-            out.println("81823128 ");
+            out.println("100 ");
         }
 
         out.close();
@@ -76,7 +76,7 @@ public class IntArrayTest {
 
         generateNewRandomArrayInTxt();
 
-        // generateNewArrayWithSameIntINTxt();
+        //generateNewArrayWithSameIntINTxt();
 
         //generateSortedArrayInTxt();
 
