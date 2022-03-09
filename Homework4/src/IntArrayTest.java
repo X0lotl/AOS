@@ -7,19 +7,33 @@ public class IntArrayTest {
     static final int ARRAY_LENGTH = 1024;
     static final String PATH_TO_FILE_WITH_ARRAY_OF_INT = "IntArray.txt";
 
-    private static void generateNewArrayInTxt() throws IOException {
+    private static void generateNewRandomArrayInTxt() throws IOException {
         PrintWriter out = new PrintWriter(new FileWriter(PATH_TO_FILE_WITH_ARRAY_OF_INT));
         Random random = new Random();
+
         for (int i = 0; i < 40000; i++) {
-            //  out.print(ARRAY_LENGTH - i + " ");
             out.print((random.nextInt()/2) + " ");
         }
+
+        out.close();
+    }
+
+    private static void generateSortedArrayInTxt() throws IOException {
+        IntNumber[] intArray;
+        intArray = generateNewIntArray();
+        Sorter.mergeSortComparable(intArray);
+        PrintWriter out = new PrintWriter(new FileWriter(PATH_TO_FILE_WITH_ARRAY_OF_INT));
+
+        for (int i = 0; i < ARRAY_LENGTH; i++) {
+            out.println(intArray[i] + " ");
+        }
+
+        out.close();
     }
 
     private static IntNumber[] readArrayFromTxt() throws FileNotFoundException {
         IntNumber[] arrayOfInt = new IntNumber[ARRAY_LENGTH];
         Scanner scanner = new Scanner(new File(PATH_TO_FILE_WITH_ARRAY_OF_INT));
-        int tempInt;
 
         for (int i = 0; i < ARRAY_LENGTH; i++) {
             if (scanner.hasNext()) {
@@ -30,22 +44,26 @@ public class IntArrayTest {
         return arrayOfInt;
     }
 
-    private static IntNumber[] generateNewIntArray(int arrayLength) {
-        IntNumber[] arrayOfInt = new IntNumber[arrayLength];
+    private static IntNumber[] generateNewIntArray() {
+        IntNumber[] arrayOfInt = new IntNumber[ARRAY_LENGTH];
         Random random = new Random();
-        for (int i = 0; i < arrayLength; i++) {
-            arrayOfInt[i] = new IntNumber(random.nextInt());
+        for (int i = 0; i < ARRAY_LENGTH; i++) {
+            arrayOfInt[i] = new IntNumber(random.nextInt() / 2);
         }
 
         return arrayOfInt;
     }
 
     public static void main(String[] args) throws IOException {
-
-
         IntNumber[] arrayOfInt;
 
-        generateNewArrayInTxt();
+        /*
+         uncomment next string if you want to update IntArray
+         */
+
+        //generateNewArrayInTxt();
+
+        generateSortedArrayInTxt();
 
         arrayOfInt = readArrayFromTxt();
         System.out.println("Your array before sorting: " + Arrays.toString(arrayOfInt));
