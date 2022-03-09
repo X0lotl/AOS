@@ -1,5 +1,4 @@
 import java.util.Comparator;
-import java.util.Random;
 
 public class Sorter {
     public static void mergeSortComparator(Comparator comparator, Object[] arrayOfStudents) {
@@ -111,7 +110,7 @@ public class Sorter {
         int j = maxIndex;
 
         while (i <= j) {
-            while (comparator.compare(arrayOfStudentsObject[i], pivot) < 0){
+            while (comparator.compare(arrayOfStudentsObject[i], pivot) < 0) {
                 i++;
             }
 
@@ -126,10 +125,10 @@ public class Sorter {
             }
         }
 
-        if(minIndex < j)
-            quickSortComparator(comparator, arrayOfStudentsObject,minIndex,j);
-        if(i < maxIndex)
-            quickSortComparator(comparator, arrayOfStudentsObject,i,maxIndex);
+        if (minIndex < j)
+            quickSortComparator(comparator, arrayOfStudentsObject, minIndex, j);
+        if (i < maxIndex)
+            quickSortComparator(comparator, arrayOfStudentsObject, i, maxIndex);
 
     }
 
@@ -139,7 +138,7 @@ public class Sorter {
         int j = maxIndex;
 
         while (i <= j) {
-            while (arrayOfStudents[i].compareTo(pivot) < 0){
+            while (arrayOfStudents[i].compareTo(pivot) < 0) {
                 i++;
             }
 
@@ -154,10 +153,10 @@ public class Sorter {
             }
         }
 
-        if(minIndex < j)
-            quickSortComparable(arrayOfStudents,minIndex,j);
-        if(i < maxIndex)
-            quickSortComparable(arrayOfStudents,i,maxIndex);
+        if (minIndex < j)
+            quickSortComparable(arrayOfStudents, minIndex, j);
+        if (i < maxIndex)
+            quickSortComparable(arrayOfStudents, i, maxIndex);
     }
 
     public static void shellSortComparator(Comparator comparator, Object[] arrayOfStudentsObject) {

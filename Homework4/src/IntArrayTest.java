@@ -35,7 +35,7 @@ public class IntArrayTest {
     private static void generateNewArrayWithSameIntINTxt() throws IOException {
         PrintWriter out = new PrintWriter(new FileWriter(PATH_TO_FILE_WITH_ARRAY_OF_INT));
 
-        for (int i = 0; i < ARRAY_LENGTH; i++){
+        for (int i = 0; i < ARRAY_LENGTH; i++) {
             out.println("100 ");
         }
 
