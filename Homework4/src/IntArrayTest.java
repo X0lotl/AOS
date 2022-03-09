@@ -26,7 +26,7 @@ public class IntArrayTest {
         PrintWriter out = new PrintWriter(new FileWriter(PATH_TO_FILE_WITH_ARRAY_OF_INT));
 
         for (int i = 0; i < ARRAY_LENGTH; i++) {
-            out.println(intArray[i] + " ");
+            out.print(intArray[i] + " ");
         }
 
         out.close();
@@ -37,6 +37,18 @@ public class IntArrayTest {
 
         for (int i = 0; i < ARRAY_LENGTH; i++) {
             out.println("100 ");
+        }
+
+        out.close();
+    }
+
+    private static void generateRevertSortedArrayInTxt() throws IOException {
+        IntNumber[] arrayOfInt = generateNewIntArray();
+        Sorter.mergeSortComparable(arrayOfInt);
+        PrintWriter out = new PrintWriter(new FileWriter(PATH_TO_FILE_WITH_ARRAY_OF_INT));
+
+        for (int i = ARRAY_LENGTH - 1; i >= 0; i--) {
+            out.print(arrayOfInt[i] + " ");
         }
 
         out.close();
@@ -74,7 +86,9 @@ public class IntArrayTest {
          uncomment next strings to chose witch methods you want to use
          */
 
-        generateNewRandomArrayInTxt();
+        //generateNewRandomArrayInTxt();
+
+        generateRevertSortedArrayInTxt();
 
         //generateNewArrayWithSameIntINTxt();
 
