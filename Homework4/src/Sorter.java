@@ -106,36 +106,30 @@ public class Sorter {
     }
 
     public static void quickSortComparator(Comparator comparator, Object[] arrayOfStudentsObject, int minIndex, int maxIndex) {
-        int leftPointer = minIndex;
-        int rightPointer = maxIndex;
+        Object pivot = arrayOfStudentsObject[minIndex + (maxIndex - minIndex) / 2];
+        int i = minIndex;
+        int j = maxIndex;
 
-        if (minIndex >= maxIndex) {
-            return;
-        }
-
-        int pivotIndex = new Random().nextInt(maxIndex - minIndex) + minIndex;
-        Object pivot = arrayOfStudentsObject[pivotIndex];
-        Switcher.swap(arrayOfStudentsObject, pivotIndex, maxIndex);
-
-
-        while (leftPointer < rightPointer) {
-
-            while (comparator.compare(arrayOfStudentsObject[leftPointer], pivot) <= 0 && leftPointer < rightPointer) {
-                leftPointer++;
+        while (i <= j) {
+            while (comparator.compare(arrayOfStudentsObject[i], pivot) < 0){
+                i++;
             }
 
-            while (comparator.compare(arrayOfStudentsObject[rightPointer], pivot) >= 0 && leftPointer < rightPointer) {
-                rightPointer--;
+            while (comparator.compare(arrayOfStudentsObject[j], pivot) > 0) {
+                j--;
             }
 
-            Switcher.swap(arrayOfStudentsObject, leftPointer, rightPointer);
-
+            if (i <= j) {
+                Switcher.swap(arrayOfStudentsObject, i, j);
+                i++;
+                j--;
+            }
         }
 
-        Switcher.swap(arrayOfStudentsObject, leftPointer, maxIndex);
-
-        quickSortComparator(comparator, arrayOfStudentsObject, minIndex, leftPointer - 1);
-        quickSortComparator(comparator, arrayOfStudentsObject, leftPointer + 1, maxIndex);
+        if(minIndex < j)
+            quickSortComparator(comparator, arrayOfStudentsObject,minIndex,j);
+        if(i < maxIndex)
+            quickSortComparator(comparator, arrayOfStudentsObject,i,maxIndex);
 
     }
 
@@ -165,41 +159,6 @@ public class Sorter {
         if(i < maxIndex)
             quickSortComparable(arrayOfStudents,i,maxIndex);
     }
-
-
-    /* public static void quickSortComparable(Comparable[] arrayOfStudents, int minIndex, int maxIndex) {
-        int leftPointer = minIndex;
-        int rightPointer = maxIndex;
-
-        if (minIndex >= maxIndex) {
-            return;
-        }
-
-        int pivotIndex = new Random().nextInt(maxIndex - minIndex) + minIndex;
-        Comparable pivot = arrayOfStudents[pivotIndex];
-        Switcher.swap(arrayOfStudents, pivotIndex, maxIndex);
-
-
-        while (leftPointer < rightPointer) {
-
-            while (arrayOfStudents[leftPointer].compareTo(pivot) <= 0 && leftPointer < rightPointer) {
-                leftPointer++;
-            }
-
-            while (arrayOfStudents[rightPointer].compareTo(pivot) >= 0 && leftPointer < rightPointer) {
-                rightPointer--;
-            }
-
-            Switcher.swap(arrayOfStudents, leftPointer, rightPointer);
-
-        }
-
-        Switcher.swap(arrayOfStudents, leftPointer, maxIndex);
-
-        quickSortComparable(arrayOfStudents, minIndex, leftPointer - 1);
-        quickSortComparable(arrayOfStudents, leftPointer + 1, maxIndex);
-
-    }*/
 
     public static void shellSortComparator(Comparator comparator, Object[] arrayOfStudentsObject) {
         for (int gap = arrayOfStudentsObject.length / 2; gap > 0; gap /= 2) {
