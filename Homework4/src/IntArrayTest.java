@@ -5,6 +5,70 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class IntArrayTest {
+
+    interface PickMethod {
+        void pick(IntNumber[] arrayOfInt);
+    }
+
+    public static PickMethod[] pickMethods = new PickMethod[]{
+            new PickMethod() {
+                @Override
+                public void pick(IntNumber[] arrayOfInt) {
+                    Sorter.mergeSortComparable(arrayOfInt);
+                }
+            },
+
+            new PickMethod() {
+                @Override
+                public void pick(IntNumber[] arrayOfInt) {
+                    Sorter.quickSortComparable(arrayOfInt, 0, arrayOfInt.length - 1);
+                }
+
+            },
+
+            new PickMethod() {
+                @Override
+                public void pick(IntNumber[] arrayOfInt) {
+                    Sorter.combSortComparable(arrayOfInt);
+                }
+            },
+
+            new PickMethod() {
+                @Override
+                public void pick(IntNumber[] arrayOfInt) {
+                    Sorter.insertionSortComparable(arrayOfInt);
+                }
+            },
+
+            new PickMethod() {
+                @Override
+                public void pick(IntNumber[] arrayOfInt) {
+                    Sorter.bubbleSortComparable(arrayOfInt);
+                }
+            },
+
+            new PickMethod() {
+                @Override
+                public void pick(IntNumber[] arrayOfInt) {
+                    Sorter.bubbleSortComparable(arrayOfInt);
+                }
+            },
+
+            new PickMethod() {
+                @Override
+                public void pick(IntNumber[] arrayOfInt) {
+                    Sorter.selectionSortComparable(arrayOfInt);
+                }
+            },
+
+            new PickMethod() {
+                @Override
+                public void pick(IntNumber[] arrayOfInt) {
+                    Sorter.shellSortComparable(arrayOfInt);
+                }
+            }
+    };
+
     public static void main(String[] args) throws IOException {
         HashMap<String, Double> sorterMethodsTime = new HashMap<>();
 
@@ -22,13 +86,21 @@ public class IntArrayTest {
 
         //generateSortedArrayInTxt();
 
+
         arrayOfInt = ArrayGenerator.readArrayFromTxt();
         System.out.println("Your array before sorting: " + Arrays.toString(arrayOfInt));
 
         Timer timer = new Timer();
         Double time;
 
-        arrayOfInt = ArrayGenerator.readArrayFromTxt();
+        for(int i = 0; i < pickMethods.length; i++){
+            timer.stopWatchAtStart();
+            pickMethods[i].pick(arrayOfInt);
+            time = timer.getElapsedTime();
+            sorterMethodsTime.put(String.valueOf(i),time);
+        }
+
+       /* arrayOfInt = ArrayGenerator.readArrayFromTxt();
         timer.stopWatchAtStart();
         Sorter.mergeSortComparable(arrayOfInt);
         time = timer.getElapsedTime();
@@ -82,7 +154,7 @@ public class IntArrayTest {
         time = timer.getElapsedTime();
         System.out.println('\n' + "Your array is sorted through shell sorter: \n" + Arrays.toString(arrayOfInt));
         System.out.println("Shell sorter time: " + time);
-        sorterMethodsTime.put("Shell sorter time", time);
+        sorterMethodsTime.put("Shell sorter time", time);*/
 
         System.out.println("\nSorter methods times: " + sorterMethodsTime);
     }
