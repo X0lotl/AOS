@@ -3,60 +3,59 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ArrayGenerator {
-    static final int ARRAY_LENGTH = 100;
     static final String PATH_TO_FILE_WITH_ARRAY_OF_INT = "IntArray.txt";
 
-    public static void generateNewRandomArrayInTxt() throws IOException {
+    public static void generateNewRandomArrayInTxt(int arrayLength) throws IOException {
         PrintWriter out = new PrintWriter(new FileWriter(PATH_TO_FILE_WITH_ARRAY_OF_INT));
         Random random = new Random();
 
-        for (int i = 0; i < 40000; i++) {
+        for (int i = 0; i < arrayLength; i++) {
             out.print((random.nextInt() / 2) + " ");
         }
 
         out.close();
     }
 
-    public static void generateSortedArrayInTxt() throws IOException {
+    public static void generateSortedArrayInTxt(int arrayLength) throws IOException {
         IntNumber[] intArray;
-        intArray = generateNewIntArray();
+        intArray = generateNewIntArray(arrayLength);
         Sorter.mergeSortComparable(intArray);
         PrintWriter out = new PrintWriter(new FileWriter(PATH_TO_FILE_WITH_ARRAY_OF_INT));
 
-        for (int i = 0; i < ARRAY_LENGTH; i++) {
+        for (int i = 0; i < arrayLength; i++) {
             out.print(intArray[i] + " ");
         }
 
         out.close();
     }
 
-    public static void generateNewArrayWithSameIntInTxt() throws IOException {
+    public static void generateNewArrayWithSameIntInTxt(int arrayLength) throws IOException {
         PrintWriter out = new PrintWriter(new FileWriter(PATH_TO_FILE_WITH_ARRAY_OF_INT));
 
-        for (int i = 0; i < ARRAY_LENGTH; i++) {
+        for (int i = 0; i < arrayLength; i++) {
             out.println("100 ");
         }
 
         out.close();
     }
 
-    public static void generateRevertSortedArrayInTxt() throws IOException {
-        IntNumber[] arrayOfInt = generateNewIntArray();
+    public static void generateRevertSortedArrayInTxt(int arrayLength) throws IOException {
+        IntNumber[] arrayOfInt = generateNewIntArray(arrayLength);
         Sorter.mergeSortComparable(arrayOfInt);
         PrintWriter out = new PrintWriter(new FileWriter(PATH_TO_FILE_WITH_ARRAY_OF_INT));
 
-        for (int i = ARRAY_LENGTH - 1; i >= 0; i--) {
+        for (int i = arrayLength - 1; i >= 0; i--) {
             out.print(arrayOfInt[i] + " ");
         }
 
         out.close();
     }
 
-    public static IntNumber[] readArrayFromTxt() throws FileNotFoundException {
-        IntNumber[] arrayOfInt = new IntNumber[ARRAY_LENGTH];
+    public static IntNumber[] readArrayFromTxt(int arrayLength) throws FileNotFoundException {
+        IntNumber[] arrayOfInt = new IntNumber[arrayLength];
         Scanner scanner = new Scanner(new File(PATH_TO_FILE_WITH_ARRAY_OF_INT));
 
-        for (int i = 0; i < ARRAY_LENGTH; i++) {
+        for (int i = 0; i < arrayLength; i++) {
             if (scanner.hasNext()) {
                 arrayOfInt[i] = new IntNumber(scanner.nextInt());
             }
@@ -65,10 +64,10 @@ public class ArrayGenerator {
         return arrayOfInt;
     }
 
-    public static IntNumber[] generateNewIntArray() {
-        IntNumber[] arrayOfInt = new IntNumber[ARRAY_LENGTH];
+    public static IntNumber[] generateNewIntArray(int arrayLength) {
+        IntNumber[] arrayOfInt = new IntNumber[arrayLength];
         Random random = new Random();
-        for (int i = 0; i < ARRAY_LENGTH; i++) {
+        for (int i = 0; i < arrayLength; i++) {
             arrayOfInt[i] = new IntNumber(random.nextInt() / 2);
         }
 

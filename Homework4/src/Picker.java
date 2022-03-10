@@ -14,7 +14,7 @@ public class Picker {
                 @Override
                 public void pick(int arrayLength) {
                     try {
-                        ArrayGenerator.generateNewRandomArrayInTxt();
+                        ArrayGenerator.generateNewRandomArrayInTxt(arrayLength);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -25,7 +25,7 @@ public class Picker {
                 @Override
                 public void pick(int arrayLength) {
                     try {
-                        ArrayGenerator.generateSortedArrayInTxt();
+                        ArrayGenerator.generateSortedArrayInTxt(arrayLength);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -36,7 +36,7 @@ public class Picker {
                 @Override
                 public void pick(int arrayLength) {
                     try {
-                        ArrayGenerator.generateRevertSortedArrayInTxt();
+                        ArrayGenerator.generateRevertSortedArrayInTxt(arrayLength);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -47,7 +47,7 @@ public class Picker {
                 @Override
                 public void pick(int arrayLength) {
                     try {
-                        ArrayGenerator.generateNewArrayWithSameIntInTxt();
+                        ArrayGenerator.generateNewArrayWithSameIntInTxt(arrayLength);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
