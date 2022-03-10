@@ -1,7 +1,60 @@
+import java.io.IOException;
+
 public class Picker {
+    interface PickVariationOfArray {
+        void pick(int arrayLength);
+    }
+
     interface PickMethod {
         void pick(IntNumber[] arrayOfInt);
     }
+
+    public static PickVariationOfArray[] arrayVariations = new PickVariationOfArray[]{
+            new PickVariationOfArray() {
+                @Override
+                public void pick(int arrayLength) {
+                    try {
+                        ArrayGenerator.generateNewRandomArrayInTxt();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            },
+
+            new PickVariationOfArray() {
+                @Override
+                public void pick(int arrayLength) {
+                    try {
+                        ArrayGenerator.generateSortedArrayInTxt();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            },
+
+            new PickVariationOfArray() {
+                @Override
+                public void pick(int arrayLength) {
+                    try {
+                        ArrayGenerator.generateRevertSortedArrayInTxt();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            },
+
+            new PickVariationOfArray() {
+                @Override
+                public void pick(int arrayLength) {
+                    try {
+                        ArrayGenerator.generateNewArrayWithSameIntInTxt();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+    };
 
     public static PickMethod[] pickMethods = new PickMethod[]{
             new PickMethod() {

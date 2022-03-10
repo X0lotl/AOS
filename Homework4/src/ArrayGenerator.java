@@ -30,7 +30,7 @@ public class ArrayGenerator {
         out.close();
     }
 
-    public static void generateNewArrayWithSameIntINTxt() throws IOException {
+    public static void generateNewArrayWithSameIntInTxt() throws IOException {
         PrintWriter out = new PrintWriter(new FileWriter(PATH_TO_FILE_WITH_ARRAY_OF_INT));
 
         for (int i = 0; i < ARRAY_LENGTH; i++) {
