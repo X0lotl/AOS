@@ -39,6 +39,7 @@ public class IntArrayTest {
         };
 
         Timer timer = new Timer();
+        StringBuilder stringBuilder = new StringBuilder();
 
 
         for (int j = 0; j < Picker.arrayVariations.length; j++) {
@@ -47,16 +48,18 @@ public class IntArrayTest {
 
             for (int indexOfMethod = 0; indexOfMethod < Picker.pickMethods.length; indexOfMethod++) {
 
-                for (int arraySizeIndex = 0; arraySizeIndex < arraysSize.length; arraySizeIndex++) {
+                for (int i : arraysSize) {
                     timer.stopWatchAtStart();
                     Picker.pickMethods[indexOfMethod].pick(arrayOfInt);
                     Double time = timer.getElapsedTime();
-                    addTimeInSorterMethodsArray(sorterMethods, indexOfMethod, arraysSize[arraySizeIndex], time);
-
+                    addTimeInSorterMethodsArray(sorterMethods, indexOfMethod, i, time);
                 }
             }
-
-            System.out.println(arrayVariations[j] + '\n' + Arrays.toString(sorterMethods));
+            stringBuilder.append(arrayVariations[j] + '\n' + Arrays.toString(sorterMethods));
         }
+
+        PrintWriter out = new PrintWriter(new File("output.txt"));
+        out.println(stringBuilder.toString());
+        out.close();
     }
 }
