@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9158f08e-d45a-481d-b589-737180731831" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IntArray.txt" beforeDir="false" afterPath="$PROJECT_DIR$/IntArray.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Homework4/IntArrayTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Homework4/IntArrayTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ArrayGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArrayGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IntArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IntArrayTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Picker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Picker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SorterMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SorterMethod.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

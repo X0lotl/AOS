@@ -3,40 +3,60 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class IntArrayTest {
+    public static void addTimeInSorterMethodsArray(SorterMethod[] sorterMethods, int indexOfMethod, int arraySize, double time) {
+        switch (arraySize) {
+            case 1024 -> sorterMethods[indexOfMethod].timeOfSorterFor1024IntArray = time;
+            case 2048 -> sorterMethods[indexOfMethod].timeOfSorterFor2048IntArray = time;
+            case 4096 -> sorterMethods[indexOfMethod].timeOfSorterFor4096IntArray = time;
+            case 8192 -> sorterMethods[indexOfMethod].timeOfSorterFor8192IntArray = time;
+            case 16384 -> sorterMethods[indexOfMethod].timeOfSorterFor16384IntArray = time;
+            case 32768 -> sorterMethods[indexOfMethod].timeOfSorterFor32768IntArray = time;
+        }
+    }
+
     public static void main(String[] args) throws IOException {
         HashMap<String, Double> sorterMethodsTime = new HashMap<>();
 
         IntNumber[] arrayOfInt = new IntNumber[0];
 
-        int[] arrayLengths = {1024, 2048, 4096, 8192, 16384, 32768};
+        SorterMethod[] sorterMethods = {
+                new SorterMethod("Merge", 0, 0, 0, 0, 0, 0),
+                new SorterMethod("Quick", 0, 0, 0, 0, 0, 0),
+                new SorterMethod("Comb", 0, 0, 0, 0, 0, 0),
+                new SorterMethod("Insertion", 0, 0, 0, 0, 0, 0),
+                new SorterMethod("Bubble", 0, 0, 0, 0, 0, 0),
+                new SorterMethod("Selection", 0, 0, 0, 0, 0, 0),
+                new SorterMethod("Shell", 0, 0, 0, 0, 0, 0)
+        };
 
-        /*
-         uncomment next strings to chose witch methods you want to use
-         */
+        int[] arraysSize = {1024, 2048, 4096, 8192, 16384, 32768};
 
-        //generateNewRandomArrayInTxt();
-
-        //ArrayGenerator.generateRevertSortedArrayInTxt();
-
-        //generateNewArrayWithSameIntINTxt();
-
-        //generateSortedArrayInTxt();
+        String[] arrayVariations = {
+                "Times for random array: ",
+                "Times for already sorted array: ",
+                "Times for revert sorted array: ",
+                "Times for array with same int: "
+        };
 
         Timer timer = new Timer();
-        Double time;
+
 
         for (int j = 0; j < Picker.arrayVariations.length; j++) {
-            Picker.arrayVariations[j].pick(arrayLengths[j]);
-            arrayOfInt = ArrayGenerator.readArrayFromTxt(arrayLengths[j]);
-            
-            for (int i = 0; i < Picker.pickMethods.length; i++) {
-                timer.stopWatchAtStart();
-                Picker.pickMethods[i].pick(arrayOfInt);
-                time = timer.getElapsedTime();
-                sorterMethodsTime.put(String.valueOf(i), time);
-            }
-        }
+            Picker.arrayVariations[j].pick(arraysSize[j]);
+            arrayOfInt = ArrayGenerator.readArrayFromTxt(arraysSize[j]);
 
-        System.out.println("\nSorter methods times: " + sorterMethodsTime);
+            for (int indexOfMethod = 0; indexOfMethod < Picker.pickMethods.length; indexOfMethod++) {
+
+                for (int arraySizeIndex = 0; arraySizeIndex < arraysSize.length; arraySizeIndex++) {
+                    timer.stopWatchAtStart();
+                    Picker.pickMethods[indexOfMethod].pick(arrayOfInt);
+                    Double time = timer.getElapsedTime();
+                    addTimeInSorterMethodsArray(sorterMethods, indexOfMethod, arraysSize[arraySizeIndex], time);
+
+                }
+            }
+
+            System.out.println(arrayVariations[j] + '\n' + Arrays.toString(sorterMethods));
+        }
     }
 }

@@ -96,13 +96,6 @@ public class Picker {
             new PickMethod() {
                 @Override
                 public void pick(IntNumber[] arrayOfInt) {
-                    Sorter.bubbleSortComparable(arrayOfInt);
-                }
-            },
-
-            new PickMethod() {
-                @Override
-                public void pick(IntNumber[] arrayOfInt) {
                     Sorter.selectionSortComparable(arrayOfInt);
                 }
             },
