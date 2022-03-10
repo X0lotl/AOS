@@ -70,6 +70,8 @@ public class IntArrayTest {
     public static void main(String[] args) throws IOException {
         HashMap<String, Double> sorterMethodsTime = new HashMap<>();
 
+
+
         IntNumber[] arrayOfInt;
 
         /*
