@@ -1,4 +1,4 @@
-public class SorterMethod {
+public class SortionMethodsTimeData {
     protected String name;
     protected double timeOfSorterFor1024IntArray;
     protected double timeOfSorterFor2048IntArray;
@@ -8,8 +8,8 @@ public class SorterMethod {
     protected double timeOfSorterFor32768IntArray;
 
 
-    public SorterMethod(String name, double timeOfSorterFor1024IntArray, double timeOfSorterFor2048IntArray,
-                        double timeOfSorterFor4096IntArray,double timeOfSorterFor8192IntArray, double timeOfSorterFor16384IntArray, double timeOfSorterFor32768IntArray) {
+    public SortionMethodsTimeData(String name, double timeOfSorterFor1024IntArray, double timeOfSorterFor2048IntArray,
+                                  double timeOfSorterFor4096IntArray, double timeOfSorterFor8192IntArray, double timeOfSorterFor16384IntArray, double timeOfSorterFor32768IntArray) {
         this.name = name;
         this.timeOfSorterFor1024IntArray = timeOfSorterFor1024IntArray;
         this.timeOfSorterFor2048IntArray = timeOfSorterFor2048IntArray;

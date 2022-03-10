@@ -1,9 +1,8 @@
 import java.io.*;
 import java.util.Arrays;
-import java.util.HashMap;
 
 public class IntArrayTest {
-    public static void addTimeInSorterMethodsArray(SorterMethod[] sorterMethods, int indexOfMethod, int arraySize, double time) {
+    public static void addTimeInSortionMethodsTimeDataArray(SortionMethodsTimeData[] sorterMethods, int indexOfMethod, int arraySize, double time) {
         switch (arraySize) {
             case 1024 -> sorterMethods[indexOfMethod].timeOfSorterFor1024IntArray = time;
             case 2048 -> sorterMethods[indexOfMethod].timeOfSorterFor2048IntArray = time;
@@ -15,18 +14,16 @@ public class IntArrayTest {
     }
 
     public static void main(String[] args) throws IOException {
-        HashMap<String, Double> sorterMethodsTime = new HashMap<>();
-
         IntNumber[] arrayOfInt = new IntNumber[0];
 
-        SorterMethod[] sorterMethods = {
-                new SorterMethod("Merge", 0, 0, 0, 0, 0, 0),
-                new SorterMethod("Quick", 0, 0, 0, 0, 0, 0),
-                new SorterMethod("Comb", 0, 0, 0, 0, 0, 0),
-                new SorterMethod("Insertion", 0, 0, 0, 0, 0, 0),
-                new SorterMethod("Bubble", 0, 0, 0, 0, 0, 0),
-                new SorterMethod("Selection", 0, 0, 0, 0, 0, 0),
-                new SorterMethod("Shell", 0, 0, 0, 0, 0, 0)
+        SortionMethodsTimeData[] sortionMethodsTimeData = {
+                new SortionMethodsTimeData("Merge", 0, 0, 0, 0, 0, 0),
+                new SortionMethodsTimeData("Quick", 0, 0, 0, 0, 0, 0),
+                new SortionMethodsTimeData("Comb", 0, 0, 0, 0, 0, 0),
+                new SortionMethodsTimeData("Insertion", 0, 0, 0, 0, 0, 0),
+                new SortionMethodsTimeData("Bubble", 0, 0, 0, 0, 0, 0),
+                new SortionMethodsTimeData("Selection", 0, 0, 0, 0, 0, 0),
+                new SortionMethodsTimeData("Shell", 0, 0, 0, 0, 0, 0)
         };
 
         int[] arraysSize = {1024, 2048, 4096, 8192, 16384, 32768};
@@ -52,10 +49,10 @@ public class IntArrayTest {
                     timer.stopWatchAtStart();
                     Picker.pickMethods[indexOfMethod].pick(arrayOfInt);
                     Double time = timer.getElapsedTime();
-                    addTimeInSorterMethodsArray(sorterMethods, indexOfMethod, i, time);
+                    addTimeInSortionMethodsTimeDataArray(sortionMethodsTimeData, indexOfMethod, i, time);
                 }
             }
-            stringBuilder.append(arrayVariations[j] + '\n' + Arrays.toString(sorterMethods));
+            stringBuilder.append(arrayVariations[j] + '\n' + Arrays.toString(sortionMethodsTimeData));
         }
 
         PrintWriter out = new PrintWriter(new File("output.txt"));
