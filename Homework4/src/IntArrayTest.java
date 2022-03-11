@@ -10,6 +10,10 @@ public class IntArrayTest {
         return arraysSize;
     }
 
+    public static String[] getArrayVariations(){
+        return arrayVariations;
+    }
+
     public static int[] arraysSize = {1024, 2048, 4096, 8192, 16384, 32768};
 
     public static SortionMethodsTimeData[] sortionMethodsTimeData = {
@@ -22,15 +26,15 @@ public class IntArrayTest {
             new SortionMethodsTimeData("Shell", 0, 0, 0, 0, 0, 0)
     };
 
+    public static String[] arrayVariations = {
+            "Times for random array: ",
+            "Times for already sorted array: ",
+            "Times for revert sorted array: ",
+            "Times for array with same int: "
+    };
+
     public static void main(String[] args) throws IOException {
         IntNumber[] arrayOfInt;
-
-        String[] arrayVariations = {
-                "Times for random array: ",
-                "Times for already sorted array: ",
-                "Times for revert sorted array: ",
-                "Times for array with same int: "
-        };
 
         Timer timer = new Timer();
         StringBuilder stringBuilder = new StringBuilder();
