@@ -2,11 +2,11 @@ import java.io.*;
 import java.util.Arrays;
 
 public class IntArrayTest {
-    public static SortionMethodsTimeData[] getSortionMethodsTimeDataArray(){
+    public static SortionMethodsTimeData[] getSortionMethodsTimeDataArray() {
         return sortionMethodsTimeData;
     }
 
-    public static int[] getArraysSize(){
+    public static int[] getArraysSize() {
         return arraysSize;
     }
 
@@ -23,9 +23,7 @@ public class IntArrayTest {
     };
 
     public static void main(String[] args) throws IOException {
-        IntNumber[] arrayOfInt = new IntNumber[0];
-
-
+        IntNumber[] arrayOfInt;
 
         String[] arrayVariations = {
                 "Times for random array: ",
@@ -37,7 +35,6 @@ public class IntArrayTest {
         Timer timer = new Timer();
         StringBuilder stringBuilder = new StringBuilder();
 
-
         for (int j = 0; j < Picker.arrayVariations.length; j++) {
             Picker.arrayVariations[j].pick(arraysSize[j]);
             arrayOfInt = ArrayGenerator.readArrayFromTxt(arraysSize[j]);
@@ -47,18 +44,16 @@ public class IntArrayTest {
                 for (int i = 0; i < arraysSize.length; i++) {
                     timer.stopWatchAtStart();
                     Picker.pickMethods[indexOfMethod].pick(arrayOfInt);
-                    Double time = timer.getElapsedTime();
+                    double time = timer.getElapsedTime();
                     Picker.addTimeToArrayOfTimeData[i].add(indexOfMethod, time);
                 }
             }
             new GraphBuilder().start(args);
-            stringBuilder.append(arrayVariations[j] + '\n' + Arrays.toString(sortionMethodsTimeData));
+            stringBuilder.append(arrayVariations[j]).append('\n').append(Arrays.toString(sortionMethodsTimeData));
         }
 
         PrintWriter out = new PrintWriter(new File("output.txt"));
-        out.println(stringBuilder.toString());
+        out.println(stringBuilder);
         out.close();
-
-
     }
 }
