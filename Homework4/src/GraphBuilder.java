@@ -9,11 +9,11 @@ public class GraphBuilder extends GraphicsProgram {
     public int[] arraysSize = IntArrayTest.getArraysSize();
 
     public Color[] colorsOfLinesForSortionMethodsData = {
-            Color.CYAN, Color.MAGENTA, Color.GREEN, Color.RED, Color.ORANGE, Color.BLACK, Color.BLUE
+            Color.CYAN, Color.MAGENTA, Color.GREEN, Color.RED, Color.ORANGE, Color.WHITE, Color.BLUE
     };
 
-    private void createNameOfArraysVariation(){
-        GLabel nameOfArraysVariation = new GLabel(IntArrayTest.getArrayVariations()[IntArrayTest.getIndexOfArraysVariation()],170, 440);
+    private void createNameOfArraysVariation() {
+        GLabel nameOfArraysVariation = new GLabel(IntArrayTest.getArrayVariations()[IntArrayTest.getIndexOfArraysVariation()], 700, 100);
         nameOfArraysVariation.setColor(Color.BLACK);
         nameOfArraysVariation.setFont("SansSerif-20");
         add(nameOfArraysVariation);
@@ -44,28 +44,51 @@ public class GraphBuilder extends GraphicsProgram {
         add(nameOfGraph);
     }
 
-    private void createLine(int index) { //index 0 - 6; i 0 - 5
+    private void createBackGroundOfGraph() {
+        GRect gRect = new GRect(150, 50, 500, 600);
+        gRect.setFilled(true);
+        gRect.setFillColor(Color.BLACK);
+        add(gRect);
+    }
+
+    private double getYPoint(int index, int scaleY, int i) {
+        return 600 - (Picker.returnArrayTimeData[i].pick(index) / scaleY);
+    }
+
+    private void createLine(int index, int scaleY) { //index 0 - 6; i 0 - 5
         double stepX = 75;
-        double scaleY = 500;
 
         for (int i = 0; i < arraysSize.length - 1; i++) {
-             GLine line = new GLine( 200 + (stepX * i),300 - Picker.returnArrayTimeData[i].pick(index) / scaleY,200 + (stepX * (i + 1)), 300 - Picker.returnArrayTimeData[i + 1].pick(index)/scaleY);
+
+            GLine line = new GLine(200 + (stepX * i), getYPoint(index, scaleY, i), 200 + (stepX * (i + 1)), getYPoint(index, scaleY, i + 1));
             line.setColor(colorsOfLinesForSortionMethodsData[index]);
             add(line);
         }
     }
 
+    private int findScaleInt(int index ,int scaleY) {
+        for (; index < sortionMethodsTimeData.length; index++) {
+            for (int i = 0; i < arraysSize.length - 1; i++) {
+                if (getYPoint(index, scaleY, i) < 50 || getYPoint(index, scaleY, i + 1) < 50) {
+                    scaleY = findScaleInt( index, scaleY + 10);
+                }
+            }
+        }
+
+        return scaleY;
+    }
+
     public void run() {
-        GRect gRect = new GRect(150, 50, 500, 300);
-        gRect.setFilled(true);
-        gRect.setFillColor(Color.LIGHT_GRAY);
-        add(gRect);
+        createBackGroundOfGraph();
         createNameOfArraysVariation();
         createNameOfGraph("Sortion methods time data graph");
 
+        int scaleY = findScaleInt(0,1);
+
         for (int i = 0; i < sortionMethodsTimeData.length; i++) {
             createInfoForGraph(i);
-            createLine(i);
+
+            createLine(i, scaleY);
         }
     }
 }
