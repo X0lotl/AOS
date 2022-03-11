@@ -9,8 +9,15 @@ public class GraphBuilder extends GraphicsProgram {
     public int[] arraysSize = IntArrayTest.getArraysSize();
 
     public Color[] colorsOfLinesForSortionMethodsData = {
-            Color.CYAN, Color.MAGENTA, Color.GREEN, Color.RED, Color.ORANGE, Color.PINK, Color.BLUE
+            Color.CYAN, Color.MAGENTA, Color.GREEN, Color.RED, Color.ORANGE, Color.BLACK, Color.BLUE
     };
+
+    private void createNameOfArraysVariation(){
+        GLabel nameOfArraysVariation = new GLabel(IntArrayTest.getArrayVariations()[IntArrayTest.getIndexOfArraysVariation()],170, 440);
+        nameOfArraysVariation.setColor(Color.BLACK);
+        nameOfArraysVariation.setFont("SansSerif-20");
+        add(nameOfArraysVariation);
+    }
 
     private void createLabelForInfo(int index) {
         GLabel nameOfMethod = new GLabel(sortionMethodsTimeData[index].name, 10, 100 + (index + 1) * 30);
@@ -49,11 +56,11 @@ public class GraphBuilder extends GraphicsProgram {
     }
 
     public void run() {
-        GRect gRect = new GRect(150, 50, 500, 400);
+        GRect gRect = new GRect(150, 50, 500, 300);
         gRect.setFilled(true);
         gRect.setFillColor(Color.LIGHT_GRAY);
         add(gRect);
-
+        createNameOfArraysVariation();
         createNameOfGraph("Sortion methods time data graph");
 
         for (int i = 0; i < sortionMethodsTimeData.length; i++) {

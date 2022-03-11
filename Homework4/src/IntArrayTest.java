@@ -14,6 +14,12 @@ public class IntArrayTest {
         return arrayVariations;
     }
 
+    public static int getIndexOfArraysVariation(){
+        return indexOfArraysVariation;
+    }
+
+    public static int indexOfArraysVariation;
+
     public static int[] arraysSize = {1024, 2048, 4096, 8192, 16384, 32768};
 
     public static SortionMethodsTimeData[] sortionMethodsTimeDataArray;
@@ -43,9 +49,9 @@ public class IntArrayTest {
         Timer timer = new Timer();
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (int j = 0; j < Picker.arrayVariations.length; j++) {
-            Picker.arrayVariations[j].pick(arraysSize[j]);
-            arrayOfInt = ArrayGenerator.readArrayFromTxt(arraysSize[j]);
+        for (indexOfArraysVariation = 0; indexOfArraysVariation < Picker.arrayVariations.length; indexOfArraysVariation++) {
+            Picker.arrayVariations[indexOfArraysVariation].pick(arraysSize[indexOfArraysVariation]);
+            arrayOfInt = ArrayGenerator.readArrayFromTxt(arraysSize[indexOfArraysVariation]);
 
             for (int indexOfMethod = 0; indexOfMethod < Picker.pickMethods.length; indexOfMethod++) {
 
@@ -57,7 +63,7 @@ public class IntArrayTest {
                 }
             }
             new GraphBuilder().start(args);
-            stringBuilder.append(arrayVariations[j]).append('\n').append(Arrays.toString(sortionMethodsTimeDataArray));
+            stringBuilder.append(arrayVariations[indexOfArraysVariation]).append('\n').append(Arrays.toString(sortionMethodsTimeDataArray));
         }
 
         PrintWriter out = new PrintWriter(new File("output.txt"));
