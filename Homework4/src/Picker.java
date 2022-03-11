@@ -1,6 +1,10 @@
 import java.io.IOException;
 
 public class Picker {
+    interface PickAddTimeToArrayOfTimeData {
+        void add(int i, double time);
+    }
+
     interface PickVariationOfArray {
         void pick(int arrayLength);
     }
@@ -12,7 +16,52 @@ public class Picker {
     interface PickMethod {
         void pick(IntNumber[] arrayOfInt);
     }
+
     static SortionMethodsTimeData[] temp = IntArrayTest.getSortionMethodsTimeDataArray();
+
+    public static PickAddTimeToArrayOfTimeData[] addTimeToArrayOfTimeData = new PickAddTimeToArrayOfTimeData[]{
+            new PickAddTimeToArrayOfTimeData() {
+                @Override
+                public void add(int i, double time) {
+                    temp[i].timeOfSorterFor1024IntArray = time;
+                }
+            },
+
+            new PickAddTimeToArrayOfTimeData() {
+                @Override
+                public void add(int i, double time) {
+                    temp[i].timeOfSorterFor2048IntArray = time;
+                }
+            },
+
+            new PickAddTimeToArrayOfTimeData() {
+                @Override
+                public void add(int i, double time) {
+                    temp[i].timeOfSorterFor4096IntArray = time;
+                }
+            },
+
+            new PickAddTimeToArrayOfTimeData() {
+                @Override
+                public void add(int i, double time) {
+                    temp[i].timeOfSorterFor8192IntArray = time;
+                }
+            },
+
+            new PickAddTimeToArrayOfTimeData() {
+                @Override
+                public void add(int i, double time) {
+                    temp[i].timeOfSorterFor16384IntArray = time;
+                }
+            },
+
+            new PickAddTimeToArrayOfTimeData() {
+                @Override
+                public void add(int i, double time) {
+                    temp[i].timeOfSorterFor32768IntArray = time;
+                }
+            }
+    };
 
     public static PickReturnOfMethodsArrayData[] returnArrayTimeData = new PickReturnOfMethodsArrayData[]{
             new PickReturnOfMethodsArrayData() {

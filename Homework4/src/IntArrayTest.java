@@ -22,21 +22,6 @@ public class IntArrayTest {
             new SortionMethodsTimeData("Shell", 0, 0, 0, 0, 0, 0)
     };
 
-    public static void addTimeInSortionMethodsTimeDataArray(SortionMethodsTimeData[] sorterMethods, int indexOfMethod, int arraySize, double time) {
-        switch (arraySize) {
-            case 1024 -> sorterMethods[indexOfMethod].timeOfSorterFor1024IntArray = time;
-            case 2048 -> sorterMethods[indexOfMethod].timeOfSorterFor2048IntArray = time;
-            case 4096 -> sorterMethods[indexOfMethod].timeOfSorterFor4096IntArray = time;
-            case 8192 -> sorterMethods[indexOfMethod].timeOfSorterFor8192IntArray = time;
-            case 16384 -> sorterMethods[indexOfMethod].timeOfSorterFor16384IntArray = time;
-            case 32768 -> sorterMethods[indexOfMethod].timeOfSorterFor32768IntArray = time;
-        }
-    }
-
-    public void run(){
-
-    }
-
     public static void main(String[] args) throws IOException {
         IntNumber[] arrayOfInt = new IntNumber[0];
 
@@ -59,11 +44,11 @@ public class IntArrayTest {
 
             for (int indexOfMethod = 0; indexOfMethod < Picker.pickMethods.length; indexOfMethod++) {
 
-                for (int i : arraysSize) {
+                for (int i = 0; i < arraysSize.length; i++) {
                     timer.stopWatchAtStart();
                     Picker.pickMethods[indexOfMethod].pick(arrayOfInt);
                     Double time = timer.getElapsedTime();
-                    addTimeInSortionMethodsTimeDataArray(sortionMethodsTimeData, indexOfMethod, i, time);
+                    Picker.addTimeToArrayOfTimeData[i].add(indexOfMethod, time);
                 }
             }
             new GraphBuilder().start(args);
