@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="jfreechart-1.0.19-demo">
+  <library name="acm">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/jfreechart-1.0.19-demo.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/acm.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

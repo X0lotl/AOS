@@ -5,9 +5,58 @@ public class Picker {
         void pick(int arrayLength);
     }
 
+    interface PickReturnOfMethodsArrayData {
+        double pick(int i);
+    }
+
     interface PickMethod {
         void pick(IntNumber[] arrayOfInt);
     }
+    static SortionMethodsTimeData[] temp = IntArrayTest.getSortionMethodsTimeDataArray();
+
+    public static PickReturnOfMethodsArrayData[] returnArrayTimeData = new PickReturnOfMethodsArrayData[]{
+            new PickReturnOfMethodsArrayData() {
+                @Override
+                public double pick(int i) {
+                    return temp[i].timeOfSorterFor1024IntArray;
+                }
+            },
+
+            new PickReturnOfMethodsArrayData() {
+                @Override
+                public double pick(int i) {
+                    return temp[i].timeOfSorterFor2048IntArray;
+                }
+            },
+
+            new PickReturnOfMethodsArrayData() {
+                @Override
+                public double pick(int i) {
+                    return temp[i].timeOfSorterFor4096IntArray;
+                }
+            },
+
+            new PickReturnOfMethodsArrayData() {
+                @Override
+                public double pick(int i) {
+                    return temp[i].timeOfSorterFor8192IntArray;
+                }
+            },
+
+            new PickReturnOfMethodsArrayData() {
+                @Override
+                public double pick(int i) {
+                    return temp[i].timeOfSorterFor16384IntArray;
+                }
+            },
+
+            new PickReturnOfMethodsArrayData() {
+                @Override
+                public double pick(int i) {
+                    return temp[i].timeOfSorterFor32768IntArray;
+                }
+            }
+    };
 
     public static PickVariationOfArray[] arrayVariations = new PickVariationOfArray[]{
             new PickVariationOfArray() {

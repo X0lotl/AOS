@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9158f08e-d45a-481d-b589-737180731831" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/experimental.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/acm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/experimental.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jfreechart_1_0_19_demo.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Homework4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Homework4.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Homework4/IntArrayTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Homework4/IntArrayTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Homework4/SorterMethod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GraphBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IntArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IntArrayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Picker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Picker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +48,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/jfreechart-1.0.19-demo.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../RandomTasks/Checkerboard" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -52,6 +59,20 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.IntArrayTest">
+    <configuration name="AcmTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AcmTest" />
+      <module name="Homework4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraphBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GraphBuilder" />
+      <module name="Homework4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="IntArrayTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="IntArrayTest" />
       <module name="Homework4" />
@@ -69,6 +90,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.IntArrayTest" />
+        <item itemvalue="Application.GraphBuilder" />
+        <item itemvalue="Application.AcmTest" />
         <item itemvalue="Application.SorterTest" />
       </list>
     </recent_temporary>
