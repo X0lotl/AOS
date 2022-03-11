@@ -2,7 +2,7 @@ import java.io.IOException;
 
 public class Picker {
     interface PickAddTimeToArrayOfTimeData {
-        void add(int i, double time);
+        void add(int indexOfMethod, double time);
     }
 
     interface PickVariationOfArray {
@@ -22,43 +22,43 @@ public class Picker {
     public static PickAddTimeToArrayOfTimeData[] addTimeToArrayOfTimeData = new PickAddTimeToArrayOfTimeData[]{
             new PickAddTimeToArrayOfTimeData() {
                 @Override
-                public void add(int i, double time) {
-                    temp[i].timeOfSorterFor1024IntArray = time;
+                public void add(int indexOfMethod, double time) {
+                    temp[indexOfMethod].timeOfSorterFor1024IntArray = time;
                 }
             },
 
             new PickAddTimeToArrayOfTimeData() {
                 @Override
-                public void add(int i, double time) {
-                    temp[i].timeOfSorterFor2048IntArray = time;
+                public void add(int indexOfMethod, double time) {
+                    temp[indexOfMethod].timeOfSorterFor2048IntArray = time;
                 }
             },
 
             new PickAddTimeToArrayOfTimeData() {
                 @Override
-                public void add(int i, double time) {
-                    temp[i].timeOfSorterFor4096IntArray = time;
+                public void add(int indexOfMethod, double time) {
+                    temp[indexOfMethod].timeOfSorterFor4096IntArray = time;
                 }
             },
 
             new PickAddTimeToArrayOfTimeData() {
                 @Override
-                public void add(int i, double time) {
-                    temp[i].timeOfSorterFor8192IntArray = time;
+                public void add(int indexOfMethod, double time) {
+                    temp[indexOfMethod].timeOfSorterFor8192IntArray = time;
                 }
             },
 
             new PickAddTimeToArrayOfTimeData() {
                 @Override
-                public void add(int i, double time) {
-                    temp[i].timeOfSorterFor16384IntArray = time;
+                public void add(int indexOfMethod, double time) {
+                    temp[indexOfMethod].timeOfSorterFor16384IntArray = time;
                 }
             },
 
             new PickAddTimeToArrayOfTimeData() {
                 @Override
-                public void add(int i, double time) {
-                    temp[i].timeOfSorterFor32768IntArray = time;
+                public void add(int indexOfMethod, double time) {
+                    temp[indexOfMethod].timeOfSorterFor32768IntArray = time;
                 }
             }
     };

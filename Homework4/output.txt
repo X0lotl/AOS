@@ -1,61 +1,61 @@
 Times for random array: 
 [
- Name of sorter method: Merge; Time for 1024 = 4339.0; Time for 2048 = 374.0; Time for 4096 = 342.0; Time for 8192 = 335.0; Time for 16384 = 337.0; Time for 32768 = 357.0
+ Name of sorter method: Merge; Time for 1024 = 2552.0; Time for 2048 = 463.0; Time for 4096 = 369.0; Time for 8192 = 347.0; Time for 16384 = 342.0; Time for 32768 = 348.0
 , 
- Name of sorter method: Quick; Time for 1024 = 1427.0; Time for 2048 = 523.0; Time for 4096 = 136.0; Time for 8192 = 108.0; Time for 16384 = 115.0; Time for 32768 = 110.0
+ Name of sorter method: Quick; Time for 1024 = 1259.0; Time for 2048 = 276.0; Time for 4096 = 109.0; Time for 8192 = 107.0; Time for 16384 = 115.0; Time for 32768 = 107.0
 , 
- Name of sorter method: Comb; Time for 1024 = 1356.0; Time for 2048 = 1341.0; Time for 4096 = 1365.0; Time for 8192 = 1029.0; Time for 16384 = 611.0; Time for 32768 = 240.0
+ Name of sorter method: Comb; Time for 1024 = 1363.0; Time for 2048 = 1396.0; Time for 4096 = 1522.0; Time for 8192 = 878.0; Time for 16384 = 233.0; Time for 32768 = 232.0
 , 
- Name of sorter method: Insertion; Time for 1024 = 95.0; Time for 2048 = 84.0; Time for 4096 = 83.0; Time for 8192 = 83.0; Time for 16384 = 83.0; Time for 32768 = 83.0
+ Name of sorter method: Insertion; Time for 1024 = 93.0; Time for 2048 = 88.0; Time for 4096 = 86.0; Time for 8192 = 88.0; Time for 16384 = 88.0; Time for 32768 = 89.0
 , 
- Name of sorter method: Bubble; Time for 1024 = 10366.0; Time for 2048 = 6563.0; Time for 4096 = 6062.0; Time for 8192 = 6175.0; Time for 16384 = 2538.0; Time for 32768 = 1135.0
+ Name of sorter method: Bubble; Time for 1024 = 11299.0; Time for 2048 = 6028.0; Time for 4096 = 1121.0; Time for 8192 = 6737.0; Time for 16384 = 5436.0; Time for 32768 = 1238.0
 , 
- Name of sorter method: Selection; Time for 1024 = 9396.0; Time for 2048 = 5512.0; Time for 4096 = 11182.0; Time for 8192 = 7320.0; Time for 16384 = 33923.0; Time for 32768 = 685.0
+ Name of sorter method: Selection; Time for 1024 = 10737.0; Time for 2048 = 5175.0; Time for 4096 = 6096.0; Time for 8192 = 6560.0; Time for 16384 = 5812.0; Time for 32768 = 31072.0
 , 
- Name of sorter method: Shell; Time for 1024 = 881.0; Time for 2048 = 895.0; Time for 4096 = 868.0; Time for 8192 = 857.0; Time for 16384 = 867.0; Time for 32768 = 868.0
+ Name of sorter method: Shell; Time for 1024 = 952.0; Time for 2048 = 897.0; Time for 4096 = 904.0; Time for 8192 = 888.0; Time for 16384 = 880.0; Time for 32768 = 887.0
 ]Times for already sorted array: 
 [
- Name of sorter method: Merge; Time for 1024 = 804.0; Time for 2048 = 514.0; Time for 4096 = 3467.0; Time for 8192 = 3004.0; Time for 16384 = 3000.0; Time for 32768 = 2965.0
+ Name of sorter method: Merge; Time for 1024 = 531.0; Time for 2048 = 460.0; Time for 4096 = 2844.0; Time for 8192 = 2988.0; Time for 16384 = 4332.0; Time for 32768 = 2981.0
 , 
- Name of sorter method: Quick; Time for 1024 = 1102.0; Time for 2048 = 206.0; Time for 4096 = 186.0; Time for 8192 = 186.0; Time for 16384 = 188.0; Time for 32768 = 195.0
+ Name of sorter method: Quick; Time for 1024 = 769.0; Time for 2048 = 323.0; Time for 4096 = 357.0; Time for 8192 = 190.0; Time for 16384 = 185.0; Time for 32768 = 210.0
 , 
- Name of sorter method: Comb; Time for 1024 = 458.0; Time for 2048 = 435.0; Time for 4096 = 431.0; Time for 8192 = 432.0; Time for 16384 = 453.0; Time for 32768 = 592.0
+ Name of sorter method: Comb; Time for 1024 = 499.0; Time for 2048 = 431.0; Time for 4096 = 432.0; Time for 8192 = 431.0; Time for 16384 = 433.0; Time for 32768 = 432.0
 , 
- Name of sorter method: Insertion; Time for 1024 = 167.0; Time for 2048 = 159.0; Time for 4096 = 165.0; Time for 8192 = 159.0; Time for 16384 = 1672.0; Time for 32768 = 237.0
+ Name of sorter method: Insertion; Time for 1024 = 166.0; Time for 2048 = 172.0; Time for 4096 = 162.0; Time for 8192 = 162.0; Time for 16384 = 162.0; Time for 32768 = 162.0
 , 
- Name of sorter method: Bubble; Time for 1024 = 4222.0; Time for 2048 = 4194.0; Time for 4096 = 3664.0; Time for 8192 = 4546.0; Time for 16384 = 3580.0; Time for 32768 = 3570.0
+ Name of sorter method: Bubble; Time for 1024 = 5103.0; Time for 2048 = 4069.0; Time for 4096 = 4057.0; Time for 8192 = 4061.0; Time for 16384 = 4104.0; Time for 32768 = 4058.0
 , 
- Name of sorter method: Selection; Time for 1024 = 2456.0; Time for 2048 = 2490.0; Time for 4096 = 2440.0; Time for 8192 = 2440.0; Time for 16384 = 2429.0; Time for 32768 = 2451.0
+ Name of sorter method: Selection; Time for 1024 = 2508.0; Time for 2048 = 2469.0; Time for 4096 = 2467.0; Time for 8192 = 2478.0; Time for 16384 = 2481.0; Time for 32768 = 2467.0
 , 
- Name of sorter method: Shell; Time for 1024 = 1257.0; Time for 2048 = 351.0; Time for 4096 = 367.0; Time for 8192 = 289.0; Time for 16384 = 281.0; Time for 32768 = 285.0
+ Name of sorter method: Shell; Time for 1024 = 1546.0; Time for 2048 = 324.0; Time for 4096 = 337.0; Time for 8192 = 301.0; Time for 16384 = 292.0; Time for 32768 = 298.0
 ]Times for revert sorted array: 
 [
- Name of sorter method: Merge; Time for 1024 = 1241.0; Time for 2048 = 779.0; Time for 4096 = 772.0; Time for 8192 = 837.0; Time for 16384 = 6547.0; Time for 32768 = 7145.0
+ Name of sorter method: Merge; Time for 1024 = 5762.0; Time for 2048 = 6617.0; Time for 4096 = 5664.0; Time for 8192 = 5969.0; Time for 16384 = 6173.0; Time for 32768 = 3190.0
 , 
- Name of sorter method: Quick; Time for 1024 = 129.0; Time for 2048 = 91.0; Time for 4096 = 90.0; Time for 8192 = 90.0; Time for 16384 = 90.0; Time for 32768 = 90.0
+ Name of sorter method: Quick; Time for 1024 = 127.0; Time for 2048 = 94.0; Time for 4096 = 93.0; Time for 8192 = 93.0; Time for 16384 = 93.0; Time for 32768 = 93.0
 , 
- Name of sorter method: Comb; Time for 1024 = 321.0; Time for 2048 = 647.0; Time for 4096 = 437.0; Time for 8192 = 324.0; Time for 16384 = 325.0; Time for 32768 = 326.0
+ Name of sorter method: Comb; Time for 1024 = 388.0; Time for 2048 = 332.0; Time for 4096 = 326.0; Time for 8192 = 326.0; Time for 16384 = 324.0; Time for 32768 = 324.0
 , 
- Name of sorter method: Insertion; Time for 1024 = 313.0; Time for 2048 = 309.0; Time for 4096 = 308.0; Time for 8192 = 308.0; Time for 16384 = 308.0; Time for 32768 = 310.0
+ Name of sorter method: Insertion; Time for 1024 = 333.0; Time for 2048 = 335.0; Time for 4096 = 330.0; Time for 8192 = 331.0; Time for 16384 = 332.0; Time for 32768 = 332.0
 , 
- Name of sorter method: Bubble; Time for 1024 = 14153.0; Time for 2048 = 14145.0; Time for 4096 = 14163.0; Time for 8192 = 14206.0; Time for 16384 = 14228.0; Time for 32768 = 14583.0
+ Name of sorter method: Bubble; Time for 1024 = 18026.0; Time for 2048 = 16714.0; Time for 4096 = 17380.0; Time for 8192 = 17213.0; Time for 16384 = 16418.0; Time for 32768 = 16408.0
 , 
- Name of sorter method: Selection; Time for 1024 = 10198.0; Time for 2048 = 11001.0; Time for 4096 = 10206.0; Time for 8192 = 10094.0; Time for 16384 = 10106.0; Time for 32768 = 10145.0
+ Name of sorter method: Selection; Time for 1024 = 10328.0; Time for 2048 = 10342.0; Time for 4096 = 10285.0; Time for 8192 = 10383.0; Time for 16384 = 11516.0; Time for 32768 = 11581.0
 , 
- Name of sorter method: Shell; Time for 1024 = 3770.0; Time for 2048 = 680.0; Time for 4096 = 666.0; Time for 8192 = 663.0; Time for 16384 = 664.0; Time for 32768 = 664.0
+ Name of sorter method: Shell; Time for 1024 = 5670.0; Time for 2048 = 672.0; Time for 4096 = 660.0; Time for 8192 = 659.0; Time for 16384 = 657.0; Time for 32768 = 659.0
 ]Times for array with same int: 
 [
- Name of sorter method: Merge; Time for 1024 = 13067.0; Time for 2048 = 16123.0; Time for 4096 = 13309.0; Time for 8192 = 12550.0; Time for 16384 = 12749.0; Time for 32768 = 13164.0
+ Name of sorter method: Merge; Time for 1024 = 1902.0; Time for 2048 = 4018.0; Time for 4096 = 2684.0; Time for 8192 = 2739.0; Time for 16384 = 2594.0; Time for 32768 = 3041.0
 , 
- Name of sorter method: Quick; Time for 1024 = 1521.0; Time for 2048 = 1254.0; Time for 4096 = 707.0; Time for 8192 = 726.0; Time for 16384 = 727.0; Time for 32768 = 752.0
+ Name of sorter method: Quick; Time for 1024 = 814.0; Time for 2048 = 772.0; Time for 4096 = 707.0; Time for 8192 = 783.0; Time for 16384 = 703.0; Time for 32768 = 722.0
 , 
- Name of sorter method: Comb; Time for 1024 = 485.0; Time for 2048 = 471.0; Time for 4096 = 483.0; Time for 8192 = 473.0; Time for 16384 = 482.0; Time for 32768 = 471.0
+ Name of sorter method: Comb; Time for 1024 = 487.0; Time for 2048 = 496.0; Time for 4096 = 526.0; Time for 8192 = 504.0; Time for 16384 = 480.0; Time for 32768 = 487.0
 , 
- Name of sorter method: Insertion; Time for 1024 = 664.0; Time for 2048 = 646.0; Time for 4096 = 668.0; Time for 8192 = 332.0; Time for 16384 = 157.0; Time for 32768 = 147.0
+ Name of sorter method: Insertion; Time for 1024 = 824.0; Time for 2048 = 735.0; Time for 4096 = 826.0; Time for 8192 = 511.0; Time for 16384 = 114.0; Time for 32768 = 106.0
 , 
- Name of sorter method: Bubble; Time for 1024 = 63722.0; Time for 2048 = 64662.0; Time for 4096 = 61416.0; Time for 8192 = 71104.0; Time for 16384 = 68106.0; Time for 32768 = 83913.0
+ Name of sorter method: Bubble; Time for 1024 = 69833.0; Time for 2048 = 70779.0; Time for 4096 = 69092.0; Time for 8192 = 69170.0; Time for 16384 = 77855.0; Time for 32768 = 73129.0
 , 
- Name of sorter method: Selection; Time for 1024 = 53780.0; Time for 2048 = 59039.0; Time for 4096 = 52310.0; Time for 8192 = 52252.0; Time for 16384 = 84817.0; Time for 32768 = 60258.0
+ Name of sorter method: Selection; Time for 1024 = 47132.0; Time for 2048 = 46336.0; Time for 4096 = 45527.0; Time for 8192 = 46093.0; Time for 16384 = 45148.0; Time for 32768 = 61674.0
 , 
- Name of sorter method: Shell; Time for 1024 = 10360.0; Time for 2048 = 958.0; Time for 4096 = 967.0; Time for 8192 = 1173.0; Time for 16384 = 914.0; Time for 32768 = 905.0
+ Name of sorter method: Shell; Time for 1024 = 9130.0; Time for 2048 = 2492.0; Time for 4096 = 589.0; Time for 8192 = 567.0; Time for 16384 = 520.0; Time for 32768 = 503.0
 ]

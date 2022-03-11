@@ -3,27 +3,23 @@ import java.util.Arrays;
 
 public class IntArrayTest {
     public static SortionMethodsTimeData[] getSortionMethodsTimeDataArray() {
-        return sortionMethodsTimeData;
+        return sortionMethodsTimeDataArray;
     }
 
     public static int[] getArraysSize() {
         return arraysSize;
     }
 
-    public static String[] getArrayVariations(){
+    public static String[] getArrayVariations() {
         return arrayVariations;
     }
 
     public static int[] arraysSize = {1024, 2048, 4096, 8192, 16384, 32768};
 
-    public static SortionMethodsTimeData[] sortionMethodsTimeData = {
-            new SortionMethodsTimeData("Merge", 0, 0, 0, 0, 0, 0),
-            new SortionMethodsTimeData("Quick", 0, 0, 0, 0, 0, 0),
-            new SortionMethodsTimeData("Comb", 0, 0, 0, 0, 0, 0),
-            new SortionMethodsTimeData("Insertion", 0, 0, 0, 0, 0, 0),
-            new SortionMethodsTimeData("Bubble", 0, 0, 0, 0, 0, 0),
-            new SortionMethodsTimeData("Selection", 0, 0, 0, 0, 0, 0),
-            new SortionMethodsTimeData("Shell", 0, 0, 0, 0, 0, 0)
+    public static SortionMethodsTimeData[] sortionMethodsTimeDataArray;
+
+    public static String[] namesOfSortionMethodsArray = {
+            "Merge", "Quick", "Comb", "Insertion", "Bubble", "Selection", "Shell"
     };
 
     public static String[] arrayVariations = {
@@ -33,8 +29,16 @@ public class IntArrayTest {
             "Times for array with same int: "
     };
 
+    public static void initSortionMethodsTimeDataArray() {
+        sortionMethodsTimeDataArray = new SortionMethodsTimeData[namesOfSortionMethodsArray.length];
+        for (int i = 0; i < namesOfSortionMethodsArray.length; i++) {
+            sortionMethodsTimeDataArray[i] = new SortionMethodsTimeData(namesOfSortionMethodsArray[i], 0,0,0,0,0,0);
+        }
+    }
+
     public static void main(String[] args) throws IOException {
         IntNumber[] arrayOfInt;
+        initSortionMethodsTimeDataArray();
 
         Timer timer = new Timer();
         StringBuilder stringBuilder = new StringBuilder();
@@ -53,7 +57,7 @@ public class IntArrayTest {
                 }
             }
             new GraphBuilder().start(args);
-            stringBuilder.append(arrayVariations[j]).append('\n').append(Arrays.toString(sortionMethodsTimeData));
+            stringBuilder.append(arrayVariations[j]).append('\n').append(Arrays.toString(sortionMethodsTimeDataArray));
         }
 
         PrintWriter out = new PrintWriter(new File("output.txt"));

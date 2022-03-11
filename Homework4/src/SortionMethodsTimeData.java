@@ -21,7 +21,7 @@ public class SortionMethodsTimeData {
 
     @Override
     public String toString() {
-        return "\n Name of sorter method: " + name +
+        return "\n Name of sortion method: " + name +
                 "; Time for 1024 = " + timeOfSorterFor1024IntArray +
                 "; Time for 2048 = " + timeOfSorterFor2048IntArray +
                 "; Time for 4096 = " + timeOfSorterFor4096IntArray +
