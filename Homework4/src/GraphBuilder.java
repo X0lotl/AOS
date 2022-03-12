@@ -66,11 +66,11 @@ public class GraphBuilder extends GraphicsProgram {
         }
     }
 
-    private int findScaleInt(int index ,int scaleY) {
+    private int findScaleInt(int index, int scaleY) {
         for (; index < sortionMethodsTimeData.length; index++) {
             for (int i = 0; i < arraysSize.length - 1; i++) {
                 if (getYPoint(index, scaleY, i) < 50 || getYPoint(index, scaleY, i + 1) < 50) {
-                    scaleY = findScaleInt( index, scaleY + 10);
+                    scaleY = findScaleInt(index, scaleY + 10);
                 }
             }
         }
@@ -83,7 +83,7 @@ public class GraphBuilder extends GraphicsProgram {
         createNameOfArraysVariation();
         createNameOfGraph("Sortion methods time data graph");
 
-        int scaleY = findScaleInt(0,1);
+        int scaleY = findScaleInt(0, 1);
 
         for (int i = 0; i < sortionMethodsTimeData.length; i++) {
             createInfoForGraph(i);
