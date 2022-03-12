@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class IntArrayTest {
     public static SortionMethodsTimeData[] getSortionMethodsTimeDataArray() {
@@ -17,6 +18,8 @@ public class IntArrayTest {
     public static int getIndexOfArraysVariation() {
         return indexOfArraysVariation;
     }
+
+    //public static HashMap<String,>
 
     public static int indexOfArraysVariation;
 
