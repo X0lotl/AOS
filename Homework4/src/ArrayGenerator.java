@@ -3,7 +3,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ArrayGenerator {
-    static final String PATH_TO_FILE_WITH_ARRAY_OF_INT = "IntArray.txt";
+    static final String PATH_TO_FILE_WITH_ARRAY_OF_INT = "saves/IntArray.txt";
 
     public static void generateNewRandomArrayInTxt(int arrayLength) throws IOException {
         PrintWriter out = new PrintWriter(new FileWriter(PATH_TO_FILE_WITH_ARRAY_OF_INT));

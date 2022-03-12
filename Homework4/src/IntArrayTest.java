@@ -62,7 +62,7 @@ public class IntArrayTest {
                     Picker.addTimeToArrayOfTimeData[i].add(indexOfMethod, time);
                 }
             }
-            new GraphBuilder().start(args);
+            new GraphBuilder().start(args); //uncomment this string if you want to generate graphs
             stringBuilder.append(arrayVariations[indexOfArraysVariation]).append('\n').append(Arrays.toString(sortionMethodsTimeDataArray));
         }
 
