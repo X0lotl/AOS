@@ -137,7 +137,7 @@ public class Sorter {
         return arrayOfObjects;
     }
 
-    public static Comparable[] quickSortComparable(Comparable[] arrayOfComparable, int minIndex, int maxIndex) {
+    public static void quickSortComparable(Comparable[] arrayOfComparable, int minIndex, int maxIndex) {
         Comparable pivot = arrayOfComparable[minIndex + (maxIndex - minIndex) / 2];
         int i = minIndex;
         int j = maxIndex;
@@ -322,5 +322,9 @@ public class Sorter {
         }
 
         return arrayOfComparable;
+    }
+
+    public static void quickSortComparable(Comparable[] arrayOfStudentsComparable) {
+        quickSortComparable(arrayOfStudentsComparable,0, arrayOfStudentsComparable.length - 1);
     }
 }

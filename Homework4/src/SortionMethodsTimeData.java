@@ -1,6 +1,10 @@
+import java.util.HashMap;
+import java.util.function.Consumer;
+
 public class SortionMethodsTimeData {
     protected String name;
-    protected Comparable[] sortionMethod;
+    protected Consumer<Comparable[]> sortionMethod;
+    protected HashMap<Integer, Double> hashMapForTimeFromArraySize;
     protected double timeOfSorterFor1024IntArray;
     protected double timeOfSorterFor2048IntArray;
     protected double timeOfSorterFor4096IntArray;
@@ -9,10 +13,10 @@ public class SortionMethodsTimeData {
     protected double timeOfSorterFor32768IntArray;
 
 
-    public SortionMethodsTimeData(String name, Comparable[] sortionMethod, double timeOfSorterFor1024IntArray, double timeOfSorterFor2048IntArray,
-                                  double timeOfSorterFor4096IntArray, double timeOfSorterFor8192IntArray, double timeOfSorterFor16384IntArray, double timeOfSorterFor32768IntArray) {
+    public SortionMethodsTimeData(String name, Consumer<Comparable[]> sortionMethod, HashMap<Integer, Double> hashMapForTimeFromArraySize) {
         this.name = name;
         this.sortionMethod = sortionMethod;
+        this.hashMapForTimeFromArraySize = hashMapForTimeFromArraySize;
         this.timeOfSorterFor1024IntArray = timeOfSorterFor1024IntArray;
         this.timeOfSorterFor2048IntArray = timeOfSorterFor2048IntArray;
         this.timeOfSorterFor4096IntArray = timeOfSorterFor4096IntArray;
