@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9158f08e-d45a-481d-b589-737180731831" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IntArray.txt" beforeDir="false" afterPath="$PROJECT_DIR$/IntArray.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ArrayGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArrayGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IntArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IntArrayTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="9158f08e-d45a-481d-b589-737180731831" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,7 +36,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../RandomTasks/Checkerboard" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -75,7 +69,7 @@
       </method>
     </configuration>
     <configuration name="SorterTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SorterTest" />
+      <option name="MAIN_CLASS_NAME" value="oldHomework.SorterTest" />
       <module name="Homework4" />
       <method v="2">
         <option name="Make" enabled="true" />

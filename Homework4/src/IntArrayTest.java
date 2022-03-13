@@ -35,7 +35,7 @@ public class IntArrayTest {
 
     public static SortionMethodsTimeData[] sortionMethodsTimeDataArray;
 
-    public static IntNumber[] arrayOfInt;
+    public static IntNumber[] arrayOfInt = {new IntNumber(0)};
 
     public static String[] arrayVariations = {
             "Times for random array: ",
