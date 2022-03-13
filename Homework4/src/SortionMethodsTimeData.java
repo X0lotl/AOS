@@ -13,8 +13,8 @@ public class SortionMethodsTimeData {
         this.hashMapForTimeFromArraySize = hashMapForTimeFromArraySize;
     }
 
-    public void addTime(int arraySize, double time){
-        hashMapForTimeFromArraySize.replace(arraySize,time);
+    public void addTime(int arraySize, double time) {
+        hashMapForTimeFromArraySize.replace(arraySize, time);
     }
 
 

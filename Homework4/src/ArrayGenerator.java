@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ArrayGenerator {
     static final String PATH_TO_FILE_WITH_ARRAY_OF_INT = "saves/IntArray.txt";
 
-    public interface GenerateNewInt{
+    public interface GenerateNewInt {
         void generateArrayOfInt(int arrayLength) throws IOException;
     }
 

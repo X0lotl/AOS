@@ -5,15 +5,15 @@ import java.util.function.Consumer;
 
 public class IntArrayTest {
 
-    public static SortionMethodsTimeData[] getSortionMethodsTimeDataArray(){
+    public static SortionMethodsTimeData[] getSortionMethodsTimeDataArray() {
         return sortionMethodsTimeDataArray;
     }
 
-    public static HashMap<String, ArrayGenerator.GenerateNewInt> getHashMapOfArrayVariations(){
+    public static HashMap<String, ArrayGenerator.GenerateNewInt> getHashMapOfArrayVariations() {
         return hashMapOfArrayVariations;
     }
 
-    public static int getIndexOfArraysVariation(){
+    public static int getIndexOfArraysVariation() {
         return indexOfArraysVariation;
     }
 

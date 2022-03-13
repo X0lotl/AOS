@@ -325,6 +325,6 @@ public class Sorter {
     }
 
     public static void quickSortComparable(Comparable[] arrayOfStudentsComparable) {
-        quickSortComparable(arrayOfStudentsComparable,0, arrayOfStudentsComparable.length - 1);
+        quickSortComparable(arrayOfStudentsComparable, 0, arrayOfStudentsComparable.length - 1);
     }
 }
