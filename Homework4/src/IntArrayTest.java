@@ -27,13 +27,13 @@ public class IntArrayTest {
 
     public static HashMap<Integer,Double> initHashMapOfTimeFromArraySize() {
         HashMap<Integer, Double> hashMapOfTimeFromArraySize = new HashMap<>();
-        for (int i : arraysSize) {
+        for (int i : arraysSizeArray) {
             hashMapOfTimeFromArraySize.put(i, (double) 0);
         }
         return hashMapOfTimeFromArraySize;
     }
 
-    public static int[] arraysSize = {1024, 2048, 4096, 8192, 16384, 32768};
+    public static int[] arraysSizeArray = {1024, 2048, 4096, 8192, 16384, 32768};
 
     public static void initHashMapOfSortionMethods() {
         hashMapOfSortionMethods.put("Merge", Sorter::mergeSortComparable);
@@ -61,14 +61,15 @@ public class IntArrayTest {
         StringBuilder stringBuilder = new StringBuilder();
 
         for (indexOfArraysVariation = 0; indexOfArraysVariation < hashMapOfArrayVariations.size(); indexOfArraysVariation++) {
-            for (int i : arraysSize) {
-                hashMapOfArrayVariations.get(hashMapOfArrayVariations.keySet().toArray()[indexOfArraysVariation]).generate(i);
-                arrayOfInt = ArrayGenerator.readArrayFromTxt(i);
+            for (int arraySize : arraysSizeArray) {
+                String arrayVariation = (String) hashMapOfArrayVariations.keySet().toArray()[indexOfArraysVariation];
+                hashMapOfArrayVariations.get(arrayVariation).generateArrayOfInt(arraySize);
+                arrayOfInt = ArrayGenerator.readArrayFromTxt(arraySize);
                 for (SortionMethodsTimeData sortionMethodsTimeData : sortionMethodsTimeDataArray) {
                      timer.stopWatchAtStart();
                     sortionMethodsTimeData.sortionMethod.accept(arrayOfInt);
                     double time = timer.getElapsedTime();
-                    sortionMethodsTimeData.hashMapForTimeFromArraySize.replace(i, time);
+                    sortionMethodsTimeData.hashMapForTimeFromArraySize.replace(arraySize, time);
                 }
             }
             stringBuilder.append(hashMapOfArrayVariations.keySet().toArray()[indexOfArraysVariation])

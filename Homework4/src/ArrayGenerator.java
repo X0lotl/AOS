@@ -6,7 +6,7 @@ public class ArrayGenerator {
     static final String PATH_TO_FILE_WITH_ARRAY_OF_INT = "saves/IntArray.txt";
 
     public interface GenerateNewInt{
-        void generate(int arrayLength) throws IOException;
+        void generateArrayOfInt(int arrayLength) throws IOException;
     }
 
     public static void generateNewRandomArrayInTxt(int arrayLength) throws IOException {
