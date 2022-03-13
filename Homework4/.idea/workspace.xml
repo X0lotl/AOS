@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9158f08e-d45a-481d-b589-737180731831" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Homework4/GraphBuilder.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Homework4/IntArrayTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Homework4/IntArrayTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Homework4/SortionMethodsTimeData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Homework4/SortionMethodsTimeData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/saves/IntArray.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saves/IntArray.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GraphBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IntArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IntArrayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Picker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Picker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SortionMethodsTimeData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortionMethodsTimeData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,5 +124,10 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="sortionMethodsTimeDataArray" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
