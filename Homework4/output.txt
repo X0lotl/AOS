@@ -1,69 +1,69 @@
 
 
-Times for random array: 
+Same
 [
- Name of sortion method: Quick; Time for 1024 = 1349.0; Time for 2048 = 527.0; Time for 4096 = 242.0; Time for 8192 = 239.0; Time for 16384 = 335.0; Time for 32768 = 235.0
+ Name of sortion method: Quick{1024=119.0, 2048=185.0, 4096=240.0, 8192=1239.0, 16384=1913.0, 32768=3147.0}
 , 
- Name of sortion method: Comb; Time for 1024 = 425.0; Time for 2048 = 370.0; Time for 4096 = 96.0; Time for 8192 = 91.0; Time for 16384 = 89.0; Time for 32768 = 72.0
+ Name of sortion method: Comb{1024=119.0, 2048=185.0, 4096=240.0, 8192=1239.0, 16384=1913.0, 32768=3147.0}
 , 
- Name of sortion method: Bubble; Time for 1024 = 881.0; Time for 2048 = 862.0; Time for 4096 = 885.0; Time for 8192 = 710.0; Time for 16384 = 224.0; Time for 32768 = 211.0
+ Name of sortion method: Bubble{1024=119.0, 2048=185.0, 4096=240.0, 8192=1239.0, 16384=1913.0, 32768=3147.0}
 , 
- Name of sortion method: Shell; Time for 1024 = 63.0; Time for 2048 = 54.0; Time for 4096 = 53.0; Time for 8192 = 53.0; Time for 16384 = 53.0; Time for 32768 = 108.0
+ Name of sortion method: Shell{1024=119.0, 2048=185.0, 4096=240.0, 8192=1239.0, 16384=1913.0, 32768=3147.0}
 , 
- Name of sortion method: Merge; Time for 1024 = 6823.0; Time for 2048 = 4031.0; Time for 4096 = 2801.0; Time for 8192 = 787.0; Time for 16384 = 726.0; Time for 32768 = 728.0
+ Name of sortion method: Merge{1024=119.0, 2048=185.0, 4096=240.0, 8192=1239.0, 16384=1913.0, 32768=3147.0}
 , 
- Name of sortion method: Selection; Time for 1024 = 6010.0; Time for 2048 = 3184.0; Time for 4096 = 3440.0; Time for 8192 = 19801.0; Time for 16384 = 29049.0; Time for 32768 = 1372.0
+ Name of sortion method: Selection{1024=119.0, 2048=185.0, 4096=240.0, 8192=1239.0, 16384=1913.0, 32768=3147.0}
 , 
- Name of sortion method: Insertion; Time for 1024 = 1186.0; Time for 2048 = 1076.0; Time for 4096 = 960.0; Time for 8192 = 907.0; Time for 16384 = 840.0; Time for 32768 = 792.0
+ Name of sortion method: Insertion{1024=119.0, 2048=185.0, 4096=240.0, 8192=1239.0, 16384=1913.0, 32768=3147.0}
 ]
 
-Times for already sorted array: 
+Random
 [
- Name of sortion method: Quick; Time for 1024 = 448.0; Time for 2048 = 279.0; Time for 4096 = 1874.0; Time for 8192 = 1911.0; Time for 16384 = 2169.0; Time for 32768 = 2029.0
+ Name of sortion method: Quick{1024=70.0, 2048=36.0, 4096=92.0, 8192=169.0, 16384=521.0, 32768=1252.0}
 , 
- Name of sortion method: Comb; Time for 1024 = 793.0; Time for 2048 = 800.0; Time for 4096 = 827.0; Time for 8192 = 838.0; Time for 16384 = 814.0; Time for 32768 = 838.0
+ Name of sortion method: Comb{1024=70.0, 2048=36.0, 4096=92.0, 8192=169.0, 16384=521.0, 32768=1252.0}
 , 
- Name of sortion method: Bubble; Time for 1024 = 326.0; Time for 2048 = 713.0; Time for 4096 = 283.0; Time for 8192 = 288.0; Time for 16384 = 287.0; Time for 32768 = 290.0
+ Name of sortion method: Bubble{1024=70.0, 2048=36.0, 4096=92.0, 8192=169.0, 16384=521.0, 32768=1252.0}
 , 
- Name of sortion method: Shell; Time for 1024 = 105.0; Time for 2048 = 105.0; Time for 4096 = 108.0; Time for 8192 = 115.0; Time for 16384 = 110.0; Time for 32768 = 110.0
+ Name of sortion method: Shell{1024=70.0, 2048=36.0, 4096=92.0, 8192=169.0, 16384=521.0, 32768=1252.0}
 , 
- Name of sortion method: Merge; Time for 1024 = 2703.0; Time for 2048 = 3028.0; Time for 4096 = 2915.0; Time for 8192 = 2690.0; Time for 16384 = 2654.0; Time for 32768 = 2607.0
+ Name of sortion method: Merge{1024=70.0, 2048=36.0, 4096=92.0, 8192=169.0, 16384=521.0, 32768=1252.0}
 , 
- Name of sortion method: Selection; Time for 1024 = 11027.0; Time for 2048 = 4050.0; Time for 4096 = 2872.0; Time for 8192 = 2361.0; Time for 16384 = 1951.0; Time for 32768 = 2120.0
+ Name of sortion method: Selection{1024=70.0, 2048=36.0, 4096=92.0, 8192=169.0, 16384=521.0, 32768=1252.0}
 , 
- Name of sortion method: Insertion; Time for 1024 = 815.0; Time for 2048 = 203.0; Time for 4096 = 210.0; Time for 8192 = 164.0; Time for 16384 = 160.0; Time for 32768 = 158.0
+ Name of sortion method: Insertion{1024=70.0, 2048=36.0, 4096=92.0, 8192=169.0, 16384=521.0, 32768=1252.0}
 ]
 
-Times for revert sorted array: 
+Revert
 [
- Name of sortion method: Quick; Time for 1024 = 4137.0; Time for 2048 = 3818.0; Time for 4096 = 14799.0; Time for 8192 = 6394.0; Time for 16384 = 4421.0; Time for 32768 = 3847.0
+ Name of sortion method: Quick{1024=6.0, 2048=12.0, 4096=120.0, 8192=25.0, 16384=91.0, 32768=237.0}
 , 
- Name of sortion method: Comb; Time for 1024 = 80.0; Time for 2048 = 58.0; Time for 4096 = 57.0; Time for 8192 = 57.0; Time for 16384 = 57.0; Time for 32768 = 57.0
+ Name of sortion method: Comb{1024=6.0, 2048=12.0, 4096=120.0, 8192=25.0, 16384=91.0, 32768=237.0}
 , 
- Name of sortion method: Bubble; Time for 1024 = 283.0; Time for 2048 = 213.0; Time for 4096 = 213.0; Time for 8192 = 207.0; Time for 16384 = 209.0; Time for 32768 = 201.0
+ Name of sortion method: Bubble{1024=6.0, 2048=12.0, 4096=120.0, 8192=25.0, 16384=91.0, 32768=237.0}
 , 
- Name of sortion method: Shell; Time for 1024 = 198.0; Time for 2048 = 193.0; Time for 4096 = 190.0; Time for 8192 = 190.0; Time for 16384 = 195.0; Time for 32768 = 192.0
+ Name of sortion method: Shell{1024=6.0, 2048=12.0, 4096=120.0, 8192=25.0, 16384=91.0, 32768=237.0}
 , 
- Name of sortion method: Merge; Time for 1024 = 9955.0; Time for 2048 = 10157.0; Time for 4096 = 10696.0; Time for 8192 = 9691.0; Time for 16384 = 11902.0; Time for 32768 = 10965.0
+ Name of sortion method: Merge{1024=6.0, 2048=12.0, 4096=120.0, 8192=25.0, 16384=91.0, 32768=237.0}
 , 
- Name of sortion method: Selection; Time for 1024 = 6072.0; Time for 2048 = 6210.0; Time for 4096 = 6111.0; Time for 8192 = 6119.0; Time for 16384 = 7455.0; Time for 32768 = 6524.0
+ Name of sortion method: Selection{1024=6.0, 2048=12.0, 4096=120.0, 8192=25.0, 16384=91.0, 32768=237.0}
 , 
- Name of sortion method: Insertion; Time for 1024 = 2291.0; Time for 2048 = 372.0; Time for 4096 = 369.0; Time for 8192 = 373.0; Time for 16384 = 367.0; Time for 32768 = 367.0
+ Name of sortion method: Insertion{1024=6.0, 2048=12.0, 4096=120.0, 8192=25.0, 16384=91.0, 32768=237.0}
 ]
 
-Times for array with same int: 
+Already
 [
- Name of sortion method: Quick; Time for 1024 = 7030.0; Time for 2048 = 8135.0; Time for 4096 = 7984.0; Time for 8192 = 7929.0; Time for 16384 = 8128.0; Time for 32768 = 8767.0
+ Name of sortion method: Quick{1024=1.0, 2048=3.0, 4096=6.0, 8192=36.0, 16384=79.0, 32768=199.0}
 , 
- Name of sortion method: Comb; Time for 1024 = 443.0; Time for 2048 = 445.0; Time for 4096 = 431.0; Time for 8192 = 432.0; Time for 16384 = 464.0; Time for 32768 = 477.0
+ Name of sortion method: Comb{1024=1.0, 2048=3.0, 4096=6.0, 8192=36.0, 16384=79.0, 32768=199.0}
 , 
- Name of sortion method: Bubble; Time for 1024 = 267.0; Time for 2048 = 267.0; Time for 4096 = 259.0; Time for 8192 = 250.0; Time for 16384 = 253.0; Time for 32768 = 240.0
+ Name of sortion method: Bubble{1024=1.0, 2048=3.0, 4096=6.0, 8192=36.0, 16384=79.0, 32768=199.0}
 , 
- Name of sortion method: Shell; Time for 1024 = 416.0; Time for 2048 = 413.0; Time for 4096 = 412.0; Time for 8192 = 241.0; Time for 16384 = 104.0; Time for 32768 = 100.0
+ Name of sortion method: Shell{1024=1.0, 2048=3.0, 4096=6.0, 8192=36.0, 16384=79.0, 32768=199.0}
 , 
- Name of sortion method: Merge; Time for 1024 = 53349.0; Time for 2048 = 37440.0; Time for 4096 = 37472.0; Time for 8192 = 37538.0; Time for 16384 = 38556.0; Time for 32768 = 38485.0
+ Name of sortion method: Merge{1024=1.0, 2048=3.0, 4096=6.0, 8192=36.0, 16384=79.0, 32768=199.0}
 , 
- Name of sortion method: Selection; Time for 1024 = 21582.0; Time for 2048 = 21695.0; Time for 4096 = 21681.0; Time for 8192 = 22493.0; Time for 16384 = 21521.0; Time for 32768 = 22046.0
+ Name of sortion method: Selection{1024=1.0, 2048=3.0, 4096=6.0, 8192=36.0, 16384=79.0, 32768=199.0}
 , 
- Name of sortion method: Insertion; Time for 1024 = 4189.0; Time for 2048 = 311.0; Time for 4096 = 303.0; Time for 8192 = 314.0; Time for 16384 = 291.0; Time for 32768 = 291.0
+ Name of sortion method: Insertion{1024=1.0, 2048=3.0, 4096=6.0, 8192=36.0, 16384=79.0, 32768=199.0}
 ]

@@ -1,4 +1,4 @@
-import acm.graphics.*;
+/*import acm.graphics.*;
 import acm.program.*;
 
 import java.awt.*;
@@ -91,4 +91,4 @@ public class GraphBuilder extends GraphicsProgram {
             createLine(i, scaleY);
         }
     }
-}
+}*/

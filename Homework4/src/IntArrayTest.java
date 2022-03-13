@@ -5,29 +5,6 @@ import java.util.HashMap;
 import java.util.function.Consumer;
 
 public class IntArrayTest {
-    public static SortionMethodsTimeData[] getSortionMethodsTimeDataArray() {
-        return sortionMethodsTimeDataArray;
-    }
-
-    public static int[] getArraysSize() {
-        return arraysSize;
-    }
-
-    public static String[] getArrayVariations() {
-        return arrayVariations;
-    }
-
-    public static int getIndexOfArraysVariation() {
-        return indexOfArraysVariation;
-    }
-
-    public static HashMap<String, Consumer<Comparable[]>> getHashMapOfSortionMethods() {
-        return hashMapOfSortionMethods;
-    }
-
-    public static IntNumber[] getArrayOfInt() {
-        return arrayOfInt;
-    }
 
     public static HashMap<String, ArrayGenerator.GenerateNewInt> hashMapOfArrayVariations = new HashMap<>();
 
@@ -37,36 +14,25 @@ public class IntArrayTest {
 
     public static int indexOfArraysVariation;
 
-    public static int[] arraysSize = {1024, 2048, 4096, 8192, 16384, 32768};
-
     public static SortionMethodsTimeData[] sortionMethodsTimeDataArray;
 
     public static IntNumber[] arrayOfInt = {new IntNumber(0)};
 
-    public static String[] arrayVariations = {
-            "Times for random array: ",
-            "Times for already sorted array: ",
-            "Times for revert sorted array: ",
-            "Times for array with same int: "
-    };
-
     public static void initSortionMethodsTimeDataArray() {
-        sortionMethodsTimeDataArray = new SortionMethodsTimeData[namesOfSortionMethodsArray.length];
-        for (int i = 0; i < namesOfSortionMethodsArray.length; i++) {
+        sortionMethodsTimeDataArray = new SortionMethodsTimeData[hashMapOfSortionMethods.size()];
+        for (int i = 0; i < hashMapOfSortionMethods.size(); i++) {
             String sortionMethodsName = (String) hashMapOfSortionMethods.keySet().toArray()[i];
             sortionMethodsTimeDataArray[i] = new SortionMethodsTimeData(sortionMethodsName, hashMapOfSortionMethods.get(sortionMethodsName), hashMapOfArraySizeAndTime);
         }
     }
-
-    public static String[] namesOfSortionMethodsArray = {
-            "Merge", "Quick", "Comb", "Insertion", "Bubble", "Selection", "Shell"
-    };
 
     public static void initHashMapOfArraySizeAndTime() {
         for (int i : arraysSize) {
             hashMapOfArraySizeAndTime.put(i, (double) 0);
         }
     }
+
+    public static int[] arraysSize = {1024, 2048, 4096, 8192, 16384, 32768};
 
     public static void initHashMapOfSortionMethods() {
         hashMapOfSortionMethods.put("Merge", Sorter::mergeSortComparable);
@@ -78,11 +44,11 @@ public class IntArrayTest {
         hashMapOfSortionMethods.put("Shell", Sorter::shellSortComparable);
     }
 
-    public static void initHashMapOfArrayVariations(){
-        hashMapOfArrayVariations.put("Random",ArrayGenerator::generateNewRandomArrayInTxt);
-        hashMapOfArrayVariations.put("Already",ArrayGenerator::generateSortedArrayInTxt);
-        hashMapOfArrayVariations.put("Revert",ArrayGenerator::generateRevertSortedArrayInTxt);
-        hashMapOfArrayVariations.put("Same",ArrayGenerator::generateNewArrayWithSameIntInTxt);
+    public static void initHashMapOfArrayVariations() {
+        hashMapOfArrayVariations.put("Random", ArrayGenerator::generateNewRandomArrayInTxt);
+        hashMapOfArrayVariations.put("Already", ArrayGenerator::generateSortedArrayInTxt);
+        hashMapOfArrayVariations.put("Revert", ArrayGenerator::generateRevertSortedArrayInTxt);
+        hashMapOfArrayVariations.put("Same", ArrayGenerator::generateNewArrayWithSameIntInTxt);
     }
 
     public static void main(String[] args) throws IOException {
@@ -94,27 +60,19 @@ public class IntArrayTest {
         Timer timer = new Timer();
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (indexOfArraysVariation = 0; indexOfArraysVariation < arrayVariations.length; indexOfArraysVariation++){
-
-        }
-
-        /*
-        for (indexOfArraysVariation = 0; indexOfArraysVariation < Picker.arrayVariations.length; indexOfArraysVariation++) {
-            Picker.arrayVariations[indexOfArraysVariation].pick(arraysSize[indexOfArraysVariation]);
-            arrayOfInt = ArrayGenerator.readArrayFromTxt(arraysSize[indexOfArraysVariation]);
-
-            for (int indexOfMethod = 0; indexOfMethod < Picker.pickMethods.length; indexOfMethod++) {
-
-                for (int i = 0; i < arraysSize.length; i++) {
+        for (indexOfArraysVariation = 0; indexOfArraysVariation < hashMapOfArrayVariations.size(); indexOfArraysVariation++) {
+            for (int i : arraysSize) {
+                hashMapOfArrayVariations.get(hashMapOfArrayVariations.keySet().toArray()[indexOfArraysVariation]).generate(i);
+                arrayOfInt = ArrayGenerator.readArrayFromTxt(i);
+                for (SortionMethodsTimeData sortionMethodsTimeData : sortionMethodsTimeDataArray) {
                     timer.stopWatchAtStart();
-                    Picker.pickMethods[indexOfMethod].pick(arrayOfInt);
+                    sortionMethodsTimeData.sortionMethod.accept(arrayOfInt);
                     double time = timer.getElapsedTime();
-                    Picker.addTimeToArrayOfTimeData[i].add(indexOfMethod, time);
+                    sortionMethodsTimeData.hashMapForTimeFromArraySize.replace(i, time);
                 }
             }
-            //new GraphBuilder().start(args); //uncomment this string if you want to generate graphs
-            stringBuilder.append("\n\n").append(arrayVariations[indexOfArraysVariation]).append('\n').append(Arrays.toString(sortionMethodsTimeDataArray));
-        }*/
+            stringBuilder.append("\n\n").append(hashMapOfArrayVariations.keySet().toArray()[indexOfArraysVariation]).append('\n').append(Arrays.toString(sortionMethodsTimeDataArray));
+        }
 
         PrintWriter out = new PrintWriter(new File("output.txt"));
         out.println(stringBuilder);
