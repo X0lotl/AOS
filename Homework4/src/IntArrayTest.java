@@ -29,6 +29,8 @@ public class IntArrayTest {
         return arrayOfInt;
     }
 
+    public static HashMap<String, ArrayGenerator.GenerateNewInt> hashMapOfArrayVariations = new HashMap<>();
+
     public static HashMap<String, Consumer<Comparable[]>> hashMapOfSortionMethods = new HashMap<>();
 
     public static HashMap<Integer, Double> hashMapOfArraySizeAndTime = new HashMap<>();
@@ -76,7 +78,15 @@ public class IntArrayTest {
         hashMapOfSortionMethods.put("Shell", Sorter::shellSortComparable);
     }
 
+    public static void initHashMapOfArrayVariations(){
+        hashMapOfArrayVariations.put("Random",ArrayGenerator::generateNewRandomArrayInTxt);
+        hashMapOfArrayVariations.put("Already",ArrayGenerator::generateSortedArrayInTxt);
+        hashMapOfArrayVariations.put("Revert",ArrayGenerator::generateRevertSortedArrayInTxt);
+        hashMapOfArrayVariations.put("Same",ArrayGenerator::generateNewArrayWithSameIntInTxt);
+    }
+
     public static void main(String[] args) throws IOException {
+        initHashMapOfArrayVariations();
         initHashMapOfArraySizeAndTime();
         initHashMapOfSortionMethods();
         initSortionMethodsTimeDataArray();
@@ -84,6 +94,11 @@ public class IntArrayTest {
         Timer timer = new Timer();
         StringBuilder stringBuilder = new StringBuilder();
 
+        for (indexOfArraysVariation = 0; indexOfArraysVariation < arrayVariations.length; indexOfArraysVariation++){
+
+        }
+
+        /*
         for (indexOfArraysVariation = 0; indexOfArraysVariation < Picker.arrayVariations.length; indexOfArraysVariation++) {
             Picker.arrayVariations[indexOfArraysVariation].pick(arraysSize[indexOfArraysVariation]);
             arrayOfInt = ArrayGenerator.readArrayFromTxt(arraysSize[indexOfArraysVariation]);
@@ -99,7 +114,7 @@ public class IntArrayTest {
             }
             //new GraphBuilder().start(args); //uncomment this string if you want to generate graphs
             stringBuilder.append("\n\n").append(arrayVariations[indexOfArraysVariation]).append('\n').append(Arrays.toString(sortionMethodsTimeDataArray));
-        }
+        }*/
 
         PrintWriter out = new PrintWriter(new File("output.txt"));
         out.println(stringBuilder);
