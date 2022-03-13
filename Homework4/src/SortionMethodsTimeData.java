@@ -1,5 +1,6 @@
 public class SortionMethodsTimeData {
     protected String name;
+    protected Comparable[] sortionMethod;
     protected double timeOfSorterFor1024IntArray;
     protected double timeOfSorterFor2048IntArray;
     protected double timeOfSorterFor4096IntArray;
@@ -8,9 +9,10 @@ public class SortionMethodsTimeData {
     protected double timeOfSorterFor32768IntArray;
 
 
-    public SortionMethodsTimeData(String name, double timeOfSorterFor1024IntArray, double timeOfSorterFor2048IntArray,
+    public SortionMethodsTimeData(String name, Comparable[] sortionMethod, double timeOfSorterFor1024IntArray, double timeOfSorterFor2048IntArray,
                                   double timeOfSorterFor4096IntArray, double timeOfSorterFor8192IntArray, double timeOfSorterFor16384IntArray, double timeOfSorterFor32768IntArray) {
         this.name = name;
+        this.sortionMethod = sortionMethod;
         this.timeOfSorterFor1024IntArray = timeOfSorterFor1024IntArray;
         this.timeOfSorterFor2048IntArray = timeOfSorterFor2048IntArray;
         this.timeOfSorterFor4096IntArray = timeOfSorterFor4096IntArray;
@@ -18,6 +20,7 @@ public class SortionMethodsTimeData {
         this.timeOfSorterFor16384IntArray = timeOfSorterFor16384IntArray;
         this.timeOfSorterFor32768IntArray = timeOfSorterFor32768IntArray;
     }
+
 
     @Override
     public String toString() {

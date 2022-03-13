@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 
 public class IntArrayTest {
@@ -18,8 +19,15 @@ public class IntArrayTest {
     public static int getIndexOfArraysVariation() {
         return indexOfArraysVariation;
     }
+    public static HashMap<String, Comparable[]> getHashMapOfSortionMethods() {
+        return hashMapOfSortionMethods;
+    }
 
-    //public static HashMap<String,>
+    public static IntNumber[] getArrayOfInt(){
+        return arrayOfInt;
+    }
+
+    public static HashMap<String, Comparable[]> hashMapOfSortionMethods = new HashMap<>();
 
     public static int indexOfArraysVariation;
 
@@ -27,9 +35,7 @@ public class IntArrayTest {
 
     public static SortionMethodsTimeData[] sortionMethodsTimeDataArray;
 
-    public static String[] namesOfSortionMethodsArray = {
-            "Merge", "Quick", "Comb", "Insertion", "Bubble", "Selection", "Shell"
-    };
+    public static IntNumber[] arrayOfInt;
 
     public static String[] arrayVariations = {
             "Times for random array: ",
@@ -41,12 +47,27 @@ public class IntArrayTest {
     public static void initSortionMethodsTimeDataArray() {
         sortionMethodsTimeDataArray = new SortionMethodsTimeData[namesOfSortionMethodsArray.length];
         for (int i = 0; i < namesOfSortionMethodsArray.length; i++) {
-            sortionMethodsTimeDataArray[i] = new SortionMethodsTimeData(namesOfSortionMethodsArray[i], 0, 0, 0, 0, 0, 0);
+            String sortionMethodsName = (String) hashMapOfSortionMethods.keySet().toArray()[i];
+            sortionMethodsTimeDataArray[i] = new SortionMethodsTimeData(sortionMethodsName,hashMapOfSortionMethods.get(sortionMethodsName ), 0, 0, 0, 0, 0, 0);
         }
     }
 
+    public static String[] namesOfSortionMethodsArray = {
+            "Merge", "Quick", "Comb", "Insertion", "Bubble", "Selection", "Shell"
+    };
+
+    public static void initHashMapOfSortionMethods(){
+        hashMapOfSortionMethods.put("Merge", Sorter.mergeSortComparable(arrayOfInt));
+        hashMapOfSortionMethods.put("Quick", Sorter.quickSortComparable(arrayOfInt,0,arrayOfInt.length - 1));
+        hashMapOfSortionMethods.put("Comb", Sorter.combSortComparable(arrayOfInt));
+        hashMapOfSortionMethods.put("Insertion",Sorter.insertionSortComparable(arrayOfInt));
+        hashMapOfSortionMethods.put("Bubble",Sorter.bubbleSortComparable(arrayOfInt));
+        hashMapOfSortionMethods.put("Selection",Sorter.selectionSortComparable(arrayOfInt));
+        hashMapOfSortionMethods.put("Shell",Sorter.shellSortComparable(arrayOfInt));
+    }
+
     public static void main(String[] args) throws IOException {
-        IntNumber[] arrayOfInt;
+        initHashMapOfSortionMethods();
         initSortionMethodsTimeDataArray();
 
         Timer timer = new Timer();
