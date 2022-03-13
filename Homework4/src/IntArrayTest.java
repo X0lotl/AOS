@@ -17,7 +17,7 @@ public class IntArrayTest {
 
     public static IntNumber[] arrayOfInt = {new IntNumber(0)};
 
-    public static void initSortionMethodsTimeDataArray(HashMap<Integer,Double> hashMapOfTimesFromArraysSize) {
+    public static void initSortionMethodsTimeDataArray(HashMap<Integer, Double> hashMapOfTimesFromArraysSize) {
         sortionMethodsTimeDataArray = new SortionMethodsTimeData[hashMapOfSortionMethods.size()];
         for (int i = 0; i < hashMapOfSortionMethods.size(); i++) {
             String sortionMethodsName = (String) hashMapOfSortionMethods.keySet().toArray()[i];
@@ -25,7 +25,7 @@ public class IntArrayTest {
         }
     }
 
-    public static HashMap<Integer,Double> initHashMapOfTimeFromArraySize() {
+    public static HashMap<Integer, Double> initHashMapOfTimeFromArraySize() {
         HashMap<Integer, Double> hashMapOfTimeFromArraySize = new HashMap<>();
         for (int i : arraysSizeArray) {
             hashMapOfTimeFromArraySize.put(i, (double) 0);
@@ -66,7 +66,7 @@ public class IntArrayTest {
                 hashMapOfArrayVariations.get(arrayVariation).generateArrayOfInt(arraySize);
                 arrayOfInt = ArrayGenerator.readArrayFromTxt(arraySize);
                 for (SortionMethodsTimeData sortionMethodsTimeData : sortionMethodsTimeDataArray) {
-                     timer.stopWatchAtStart();
+                    timer.stopWatchAtStart();
                     sortionMethodsTimeData.sortionMethod.accept(arrayOfInt);
                     double time = timer.getElapsedTime();
                     sortionMethodsTimeData.hashMapForTimeFromArraySize.replace(arraySize, time);

@@ -10,6 +10,5 @@ public class Switcher {
         Comparable tempComparable = array[index1];
         array[index1] = array[index2];
         array[index2] = tempComparable;
-
     }
 }
