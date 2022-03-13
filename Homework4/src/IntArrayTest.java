@@ -5,6 +5,18 @@ import java.util.function.Consumer;
 
 public class IntArrayTest {
 
+    public static SortionMethodsTimeData[] getSortionMethodsTimeDataArray(){
+        return sortionMethodsTimeDataArray;
+    }
+
+    public static HashMap<String, ArrayGenerator.GenerateNewInt> getHashMapOfArrayVariations(){
+        return hashMapOfArrayVariations;
+    }
+
+    public static int getIndexOfArraysVariation(){
+        return indexOfArraysVariation;
+    }
+
     public static HashMap<String, ArrayGenerator.GenerateNewInt> hashMapOfArrayVariations = new HashMap<>();
 
     public static HashMap<String, Consumer<Comparable[]>> hashMapOfSortionMethods = new HashMap<>();
@@ -72,6 +84,8 @@ public class IntArrayTest {
                     sortionMethodsTimeData.hashMapForTimeFromArraySize.replace(arraySize, time);
                 }
             }
+            new GraphBuilder().start(args);
+
             stringBuilder.append(hashMapOfArrayVariations.keySet().toArray()[indexOfArraysVariation])
                     .append('\n')
                     .append(Arrays.toString(sortionMethodsTimeDataArray))

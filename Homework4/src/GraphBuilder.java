@@ -1,4 +1,4 @@
-/*import acm.graphics.*;
+import acm.graphics.*;
 import acm.program.*;
 
 import java.awt.*;
@@ -6,14 +6,13 @@ import java.awt.*;
 public class GraphBuilder extends GraphicsProgram {
     public SortionMethodsTimeData[] sortionMethodsTimeData = IntArrayTest.getSortionMethodsTimeDataArray();
 
-    public int[] arraysSize = IntArrayTest.getArraysSize();
-
     public Color[] colorsOfLinesForSortionMethodsData = {
             Color.CYAN, Color.MAGENTA, Color.GREEN, Color.RED, Color.ORANGE, Color.WHITE, Color.BLUE
     };
 
     private void createNameOfArraysVariation() {
-        GLabel nameOfArraysVariation = new GLabel(IntArrayTest.getArrayVariations()[IntArrayTest.getIndexOfArraysVariation()], 700, 100);
+        String arrayVariationName = (String) IntArrayTest.getHashMapOfArrayVariations().keySet().toArray()[IntArrayTest.getIndexOfArraysVariation()];
+        GLabel nameOfArraysVariation = new GLabel(arrayVariationName, 700, 100);
         nameOfArraysVariation.setColor(Color.BLACK);
         nameOfArraysVariation.setFont("SansSerif-20");
         add(nameOfArraysVariation);
@@ -51,14 +50,15 @@ public class GraphBuilder extends GraphicsProgram {
         add(gRect);
     }
 
-    private double getYPoint(int index, int scaleY, int i) {
-        return 600 - (Picker.returnArrayTimeData[i].pick(index) / scaleY);
+    private double getYPoint(int indexOfSortionMethod, int scaleY, int i) {
+        int arraySize = (int) sortionMethodsTimeData[indexOfSortionMethod].hashMapForTimeFromArraySize.keySet().toArray()[i];
+        return 600 - (sortionMethodsTimeData[indexOfSortionMethod].hashMapForTimeFromArraySize.get(arraySize) / scaleY);
     }
 
     private void createLine(int index, int scaleY) { //index 0 - 6; i 0 - 5
         double stepX = 75;
 
-        for (int i = 0; i < arraysSize.length - 1; i++) {
+        for (int i = 0; i < sortionMethodsTimeData[0].hashMapForTimeFromArraySize.size() - 1; i++) {
 
             GLine line = new GLine(200 + (stepX * i), getYPoint(index, scaleY, i), 200 + (stepX * (i + 1)), getYPoint(index, scaleY, i + 1));
             line.setColor(colorsOfLinesForSortionMethodsData[index]);
@@ -68,7 +68,7 @@ public class GraphBuilder extends GraphicsProgram {
 
     private int findScaleInt(int index, int scaleY) {
         for (; index < sortionMethodsTimeData.length; index++) {
-            for (int i = 0; i < arraysSize.length - 1; i++) {
+            for (int i = 0; i < sortionMethodsTimeData[0].hashMapForTimeFromArraySize.size() - 1; i++) {
                 if (getYPoint(index, scaleY, i) < 50 || getYPoint(index, scaleY, i + 1) < 50) {
                     scaleY = findScaleInt(index, scaleY + 10);
                 }
@@ -91,4 +91,4 @@ public class GraphBuilder extends GraphicsProgram {
             createLine(i, scaleY);
         }
     }
-}*/
+}
