@@ -66,7 +66,15 @@ public class TextFileManager {
         return placesOfSubStrings;
     }
 
-    public void fileSorter() {
+    public String generateNewFileName(String oldFileName) {
+        return oldFileName+"_sorted_acs.txt";
+    }
 
+    public void fileSorter(File inputFile) throws IOException {
+        Sorter sorter = new Sorter();
+
+        String[] sortedStringArray = sorter.sortStringArray(fileToStringArray(inputFile));
+
+        stringArrayToFile(sortedStringArray, new File(generateNewFileName(inputFile.getName())));
     }
 }
