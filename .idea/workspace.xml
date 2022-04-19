@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcba0f51-3f81-47f5-afe3-fc9b22c0ce8a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Homework3/out/production/Homework3/StudentsGrades.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework3/out/production/Homework3/StudentsGradesTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/Homework3/out/production/Homework3/StudentsGradesTester.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework3/src/StudentsGrades.java" beforeDir="false" afterPath="$PROJECT_DIR$/Homework3/src/StudentsGradesGeneric.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework3/src/StudentsGradesTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/Homework3/src/StudentsGradesTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,16 +12,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="25ChJtNo7mcXHnvODj5nSGwubJE" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -35,6 +34,8 @@
       <option name="presentableId" value="Default" />
       <updated>1645036908449</updated>
       <workItem from="1645036910396" duration="52000" />
+      <workItem from="1649699911238" duration="902000" />
+      <workItem from="1650368843814" duration="94000" />
     </task>
     <servers />
   </component>
