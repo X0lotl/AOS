@@ -19,7 +19,7 @@ public class TextFileManager {
     }
 
 
-    String[] fileToStringArray(File inputFile) throws FileNotFoundException {
+    public String[] fileToStringArray(File inputFile) throws FileNotFoundException {
         String[] outputArray = new String[0];
         Scanner scanner = new Scanner(inputFile);
         while (scanner.hasNext()){
@@ -29,7 +29,7 @@ public class TextFileManager {
         return outputArray;
     }
 
-    void stringArrayToFile(String[] inputArray, File outputFile) throws IOException {
+    public void stringArrayToFile(String[] inputArray, File outputFile) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputFile));
 
         for (String s : inputArray) {
@@ -40,7 +40,7 @@ public class TextFileManager {
         bufferedWriter.close();
     }
 
-    boolean fileHasString(String inputString, File inputFile) throws FileNotFoundException {
+    public boolean fileHasString(String inputString, File inputFile) throws FileNotFoundException {
         String[] inputArray = fileToStringArray(inputFile);
         for(String stringInArray : inputArray) {
             if(inputString.equals(stringInArray)){
@@ -51,11 +51,10 @@ public class TextFileManager {
         return false;
     }
 
-    PlaceOfSubString[] placesOfSubString(String inputSubString, File inputFile) throws FileNotFoundException {
+    public PlaceOfSubString[] placesOfSubString(String inputSubString, File inputFile) throws FileNotFoundException {
         String[] inputArray = fileToStringArray(inputFile);
         PlaceOfSubString[] placesOfSubStrings = new PlaceOfSubString[0];
         Pattern pattern = Pattern.compile(inputSubString);
-
 
         for(int i = 0; i < inputArray.length; i++) {
             Matcher matcher = pattern.matcher(inputArray[i]);
@@ -65,5 +64,9 @@ public class TextFileManager {
         }
 
         return placesOfSubStrings;
+    }
+
+    public void fileSorter() {
+
     }
 }
