@@ -11,8 +11,10 @@ public class ManagerTest {
 
         String[] testArray = {"2323", "123", "jsabdkas", "X0lotl"};
 
-        System.out.println(Arrays.toString(textFileManager.fileToStringArray(inputFile)));
+        System.out.println(textFileManager.fileHasString("X0lotl", inputFile));
 
-        textFileManager.stringArrayToFile(testArray, inputFile);
+        //System.out.println(Arrays.toString(textFileManager.fileToStringArray(inputFile)));
+
+        //textFileManager.stringArrayToFile(testArray, inputFile);
     }
 }

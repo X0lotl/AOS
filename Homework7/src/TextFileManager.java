@@ -24,11 +24,22 @@ public class TextFileManager {
     void stringArrayToFile(String[] inputArray, File outputFile) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputFile));
 
-        for (int i = 0; i < inputArray.length; i++){
-            bufferedWriter.write(inputArray[i] + "\n");
+        for (String s : inputArray) {
+            bufferedWriter.write(s + "\n");
 
         }
 
         bufferedWriter.close();
+    }
+
+    boolean fileHasString(String inputString, File inputFile) throws FileNotFoundException {
+        String[] inputArray = fileToStringArray(inputFile);
+        for(String stringInArray : inputArray) {
+            if(inputString.equals(stringInArray)){
+                return true;
+            }
+        }
+
+        return false;
     }
 }
