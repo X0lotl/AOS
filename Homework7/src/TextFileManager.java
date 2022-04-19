@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
 
 public class TextFileManager {
     private PlaceOfSubString[] addPlaceOfSubString(int numberOfStringInFile, int indexOFStartOfSubStringInFile, PlaceOfSubString[] placeOfSubStrings) {
