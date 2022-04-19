@@ -1,7 +1,16 @@
 import java.io.*;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 public class TextFileManager {
+    private PlaceOfSubString[] addPlaceOfSubString(int numberOfStringInFile, int indexOFStartOfSubStringInFile, PlaceOfSubString[] placeOfSubStrings) {
+        PlaceOfSubString[] tempArray = new PlaceOfSubString[placeOfSubStrings.length + 1];
+        System.arraycopy(placeOfSubStrings,0,tempArray,0, placeOfSubStrings.length);
+        tempArray[tempArray.length - 1] = new PlaceOfSubString(numberOfStringInFile, indexOFStartOfSubStringInFile);
+        return tempArray;
+    }
     private String[] addStringToArray(String inputString, String[] inputArray){
         String[] outputArray = new String[inputArray.length + 1];
         System.arraycopy(inputArray, 0, outputArray, 0, inputArray.length);
@@ -41,5 +50,21 @@ public class TextFileManager {
         }
 
         return false;
+    }
+
+    PlaceOfSubString[] placesOfSubString(String inputSubString, File inputFile) throws FileNotFoundException {
+        String[] inputArray = fileToStringArray(inputFile);
+        PlaceOfSubString[] placesOfSubStrings = new PlaceOfSubString[0];
+        Pattern pattern = Pattern.compile(inputSubString);
+
+
+        for(int i = 0; i < inputArray.length; i++) {
+            Matcher matcher = pattern.matcher(inputArray[i]);
+            while (matcher.find()) {
+                placesOfSubStrings = addPlaceOfSubString(i, matcher.start(), placesOfSubStrings);
+            }
+        }
+
+        return placesOfSubStrings;
     }
 }

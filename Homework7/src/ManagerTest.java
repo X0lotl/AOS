@@ -11,7 +11,9 @@ public class ManagerTest {
 
         String[] testArray = {"2323", "123", "jsabdkas", "X0lotl"};
 
-        System.out.println(textFileManager.fileHasString("X0lotl", inputFile));
+        System.out.println(Arrays.toString(textFileManager.placesOfSubString("123", inputFile)));
+
+        //System.out.println(textFileManager.fileHasString("X0lotl", inputFile));
 
         //System.out.println(Arrays.toString(textFileManager.fileToStringArray(inputFile)));
 
